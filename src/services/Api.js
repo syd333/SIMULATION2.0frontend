@@ -14,7 +14,7 @@ const headers = () => {
 const login = (data) => {
     return fetch(`${SIMULATION}/login`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: headers(),
       body: JSON.stringify(data),
     }).then((res) => res.json());
   };
@@ -23,8 +23,9 @@ const login = (data) => {
   const signup = (data) => {
     return fetch(`${SIMULATION}/signup`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: headers(),
       body: JSON.stringify(data),
+    //   user: data
     }).then((res) => res.json());
   };
   

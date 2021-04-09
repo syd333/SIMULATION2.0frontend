@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import { Route, Switch, withRouter } from "react-router-dom";
 import "semantic-ui-css/semantic.min.css";
 import { api } from "./services/Api";
+import { connect } from 'react-redux';
 import "./App.css";
 
 class App extends Component {
