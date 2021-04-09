@@ -9,3 +9,40 @@ const headers = () => {
     Authorization: token(),
   };
 };
+
+//login
+const login = (data) => {
+    return fetch(`${SIMULATION}/login`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    }).then((res) => res.json());
+  };
+  
+  //signup
+  const signup = (data) => {
+    return fetch(`${SIMULATION}/signup`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(data),
+    }).then((res) => res.json());
+  };
+  
+  //ensures user login accross the site
+  const getCurrentUser = () => {
+    return fetch(`${SIMULATION}/getuser`, {
+      method: "GET",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${localStorage.token}`,
+      },
+    }).then((res) => res.json());
+  };
+
+  export const api = {
+    auth: {
+      login,
+      signup,
+      getCurrentUser,
+    }
+}
