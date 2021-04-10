@@ -4,3 +4,9 @@ export const Auth = user => {
         payload: user 
     }
 }
+
+// export const fetchMiss = () => {
+//     return {
+//         type: 'FETCH_MISS'
+//     }
+// }
