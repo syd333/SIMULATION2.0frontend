@@ -1,24 +1,30 @@
 import React, { Component } from "react";
-import { BrowserRouter, Route } from "react-router-dom";
+import { withRouter, BrowserRouter, Route, Switch } from "react-router-dom";
 import { api } from "./services/Api";
-import { connect } from 'react-redux';
-import 'semantic-ui-css/semantic.min.css'
-import { Auth } from './actions/index'
+import { connect } from "react-redux";
+import "semantic-ui-css/semantic.min.css";
+import { Auth } from "./actions/index";
 
-import DropDown from './components/Account/DropDown';
+import DropDown from "./components/Account/DropDown";
+import LoginPage from "./components/Account/LoginPage";
+import SignUpPage from "./components/Account/SignupPage";
 
-//all handlelogin, handlesignup etc 
+//all handlelogin, handlesignup etc
 // no state?
-//all route paths 
+//all route paths
 //mapstatetoprops.login: state.login.currentuser?
 
 class App extends Component {
-
   state = {
     auth: {
       user: {},
-    }
-  }
+    },
+  };
+
+  handleLogin = () => (
+    <LoginPage history={this.props.history} onLogin={this.login} />
+  );
+  handleSignUp = () => <SignUpPage onLogin={this.login} />;
 
   // componentDidMount(){
   //   const token = localStorage.token
@@ -37,7 +43,13 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-         <DropDown/>
+        <DropDown />
+        <BrowserRouter>
+          <Switch>
+            <Route path="/login" exact component={this.handleLogin} />
+            <Route path="/signup" exact component={this.handleSignUp} />
+          </Switch>
+        </BrowserRouter>
       </div>
     );
   }
