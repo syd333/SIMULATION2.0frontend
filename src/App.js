@@ -39,6 +39,19 @@ class App extends Component {
   //     })
   //   }
   // }
+  // login = (data) => {
+  //   localStorage.setItem("token", data.jwt);
+  //   const token = localStorage.token;
+  //   if (token && token !== "undefined") {
+  //     this.props.history.push("/");
+  //     this.setState({
+  //       auth: {
+  //         ...this.state.auth,
+  //         user: { user_id: data.user.id, username: data.user.username },
+  //       },
+  //     });
+  //   }
+  // };
 
   render() {
     return (

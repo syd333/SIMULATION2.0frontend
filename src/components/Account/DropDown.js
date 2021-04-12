@@ -11,16 +11,16 @@ class DropDown extends Component {
             <Dropdown.Menu>
               <Input icon="search" iconPosition="left" className="search" />
               <Dropdown.Divider />
-              <Dropdown.Header content="search state..." />
+              <Dropdown.Header content="search new city..." />
               <Dropdown.Menu scrolling>
                 <Dropdown.Item>
                   <Link to="/login" className="item">
-                    log In
+                    login
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
                   <Link to="/signup" className="item">
-                    sign Up
+                    signup
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
