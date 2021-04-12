@@ -21,11 +21,11 @@ class SignUpPage extends Component {
             password: this.state.password,
         }
         console.log(newUser)
-        // api.auth.signup(newUser).then(data => {
-        //     localStorage.setItem('token', data.jwt )
-        //     this.props.Auth(data)
+        api.auth.signup(newUser).then(data => {
+            localStorage.setItem('token', data.jwt )
+            this.props.Auth(data)
         //     console.log(data)
-        // })
+        })
     }
 
 
@@ -59,7 +59,7 @@ class SignUpPage extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state)
+    return {}
 }
 
-export default connect(mapStateToProps)(SignUpPage);
+export default connect(mapStateToProps, {Auth})(SignUpPage);

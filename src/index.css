@@ -3,10 +3,27 @@ body {
     font-family: ocr-a-std,monospace;
     font-weight: 400;
     font-style: normal;
+    padding-right: 60px;
+    padding-left: 50px;
+    margin-left: 50px;
+    margin-right: 60px;
 }
 
 .App-header {
     font-family: ocr-a-std,monospace;
-    font-weight: 400;
+    font-weight: 500;
     font-style: normal;
+    padding-right: 60px;
+    padding-left: 50px;
+    margin-left: 50px;
+    margin-right: 60px;
+}
+
+.dropdown.container {
+  float:right;
+  padding-right: 30px;
+}
+
+.item {
+  color: black;
 }

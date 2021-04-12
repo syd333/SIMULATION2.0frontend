@@ -1,4 +1,4 @@
-const SIMULATION = `http://localhost:3000`;
+const SIMULATION = `http://localhost:3001`;
 
 const token = () => localStorage.getItem("token");
 
@@ -30,7 +30,7 @@ const login = (data) => {
   
   };
   
-  //ensures user login accross the site
+  //ensures user login across the site
   const getCurrentUser = () => {
     return fetch(`${SIMULATION}/getuser`, {
       method: "GET",

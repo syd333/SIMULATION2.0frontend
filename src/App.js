@@ -8,50 +8,28 @@ import { Auth } from "./actions/index";
 import DropDown from "./components/Account/DropDown";
 import LoginPage from "./components/Account/LoginPage";
 import SignUpPage from "./components/Account/SignupPage";
+import HomeContainer from "./components/Containers/HomeContainer";
 
-//all handlelogin, handlesignup etc
-// no state?
-//all route paths
-//mapstatetoprops.login: state.login.currentuser?
 
 class App extends Component {
-  state = {
-    auth: {
-      user: {},
-    },
-  };
-
   handleLogin = () => (
     <LoginPage history={this.props.history} onLogin={this.login} />
   );
   handleSignUp = () => <SignUpPage onLogin={this.login} />;
+  handleHome = () => <HomeContainer props={this.state} />;
 
-  // componentDidMount(){
-  //   const token = localStorage.token
-  //   if(token){
-  //     api.auth.getCurrentUser().then(data => {
-  //       this.setState({
-  //         auth: {
-  //           ...this.state.auth,
-  //           user: {user_id: data.user.id, email: data.user.email}
-  //         }
-  //       })
-  //     })
-  //   }
+  componentDidMount() {
+    const token = localStorage.token;
+    if (token) {
+      api.auth.getCurrentUser().then((user) => {
+        this.props.Auth(user);
+      });
+    }
+  }
+  //   const onLogout = () => {
+  //     localStorage.removeItem('token')
+  //     props.Auth({})
   // }
-  // login = (data) => {
-  //   localStorage.setItem("token", data.jwt);
-  //   const token = localStorage.token;
-  //   if (token && token !== "undefined") {
-  //     this.props.history.push("/");
-  //     this.setState({
-  //       auth: {
-  //         ...this.state.auth,
-  //         user: { user_id: data.user.id, username: data.user.username },
-  //       },
-  //     });
-  //   }
-  // };
 
   render() {
     return (
@@ -59,6 +37,7 @@ class App extends Component {
         <DropDown />
         <BrowserRouter>
           <Switch>
+            <Route path="/" exact component={this.handleHome} />
             <Route path="/login" exact component={this.handleLogin} />
             <Route path="/signup" exact component={this.handleSignUp} />
           </Switch>
@@ -68,4 +47,10 @@ class App extends Component {
   }
 }
 
-export default App;
+const mapStateToProps = (state) => {
+  return {
+    auth: state.user,
+  };
+};
+
+export default connect(mapStateToProps, { Auth })(App);

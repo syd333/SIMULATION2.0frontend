@@ -1,29 +1,42 @@
 import React, { Component } from "react";
-import { connect } from 'react-redux';
+import { connect } from "react-redux";
 import { api } from "../../services/Api";
-import { Auth } from '../../actions/index'
+import { Auth } from "../../actions/index";
 import { Form, Button } from "semantic-ui-react";
 
 class LoginPage extends Component {
   state = {
-    fields: {
       email: "",
-      password: "",
-    },
+      password: ""
   };
 
-  handleChange = (e) => {
-    const newFields = { ...this.state.fields, [e.target.value]: e.target.value}
-    this.setState({
-        fields: newFields
-    })
-  };
+  //   login = (data) => {
+  //     }
 
-  handleSubmit = (e) => {
+  handleEmail = data => this.setState({email: data})
+  handlePassword = data => this.setState({password: data})
+
+//   handleChange = (e) => {
+//     const newFields = {
+//       ...this.state.fields,
+//       [e.target.value]: e.target.value,
+//     };
+//     this.setState({
+//       fields: newFields,
+//     });
+//   };
+
+  handleSubmit = (e, data) => {
     e.preventDefault();
-    // api.auth.login(this.state.fields).then((res) => {
-    //     this.props.onLogin(res)
-    // })
+    localStorage.setItem("token", data.jwt);
+    const token = localStorage.token;
+    if (token && token !== "undefined") {
+      this.props.history.push("/");
+    }
+    console.log(this.state);
+    api.auth.login(this.state.fields).then((data) => {
+      this.props.Auth(data);
+    });
   };
 
   render() {
@@ -38,16 +51,16 @@ class LoginPage extends Component {
                 id="form-subcomponent-shorthand-input-email"
                 label="email"
                 placeholder="email"
-                value={this.state.fields.email}
-                onChange={this.handleChange}
+                // value={this.state.fields.email}
+                onChange={e => this.handleEmail(e.target.value)}
               />
               <Form.Input
                 fluid
                 id="form-subcomponent-shorthand-input-password"
                 label="password"
                 placeholder="password"
-                value={this.state.fields.password}
-                onChange={this.handleChange}
+                // value={this.state.fields.password}
+                onChange={e => this.handlePassword(e.target.value)}
               />
               <button href="/" type="submit" className="ui basic black button">
                 login
@@ -61,8 +74,8 @@ class LoginPage extends Component {
   }
 }
 
-const mapStateToProps = state => {
-    console.log(state)
-}
+const mapStateToProps = (state) => {
+  return {};
+};
 
-export default connect(mapStateToProps)(LoginPage);
+export default connect(mapStateToProps, { Auth })(LoginPage);
