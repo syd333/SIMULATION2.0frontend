@@ -38,17 +38,15 @@ class SignUpPage extends Component {
               fluid
               id="form-subcomponent-shorthand-input-email"
               label="email"
-              placeholder="email"
               onChange={e => this.handleEmail(e.target.value)}
             />
             <Form.Input
               fluid
               id="form-subcomponent-shorthand-input-password"
               label="password"
-              placeholder="password"
               onChange={e => this.handlePassword(e.target.value)}
             />
-               <button href="/" type="submit" className="ui basic black button">
+               <button href="/" type="submit" className= "signupbutton">
                 signup
               </button>
           </Form.Group>

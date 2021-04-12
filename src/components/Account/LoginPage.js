@@ -50,7 +50,6 @@ class LoginPage extends Component {
                 fluid
                 id="form-subcomponent-shorthand-input-email"
                 label="email"
-                placeholder="email"
                 // value={this.state.fields.email}
                 onChange={e => this.handleEmail(e.target.value)}
               />
@@ -58,11 +57,10 @@ class LoginPage extends Component {
                 fluid
                 id="form-subcomponent-shorthand-input-password"
                 label="password"
-                placeholder="password"
                 // value={this.state.fields.password}
                 onChange={e => this.handlePassword(e.target.value)}
               />
-              <button href="/" type="submit" className="ui basic black button">
+              <button href="/" type="submit" className="loginbutton">
                 login
               </button>
               {/* <button class="ui button">Click Here</button> */}

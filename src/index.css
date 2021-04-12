@@ -27,3 +27,28 @@ body {
 .item {
   color: black;
 }
+
+.misslinks {
+  text-align: center;
+  padding-top: 400px;
+  text-decoration: underline;
+}
+
+.signupbutton {
+  border: none;
+  font-family: ocr-a-std,monospace;
+  background-color: white;
+}
+
+.signup {
+  padding-top: 40px;
+}
+
+.loginbutton {
+  border: none;
+  font-family: ocr-a-std,monospace;
+  background-color: white;
+}
+.login {
+  padding-top: 40px;
+}
