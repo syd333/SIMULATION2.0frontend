@@ -27,7 +27,6 @@ const login = (data) => {
       body: JSON.stringify(data),
     //   user: data
     }).then((res) => res.json());
-  
   };
   
   //ensures user login across the site
@@ -52,7 +51,7 @@ const login = (data) => {
     auth: {
       login,
       signup,
-      getCurrentUser,
+      getCurrentUser
     }
     // miss: {
     //   getAllMisses

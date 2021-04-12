@@ -10,32 +10,30 @@ import LoginPage from "./components/Account/LoginPage";
 import SignUpPage from "./components/Account/SignupPage";
 import HomeContainer from "./components/Containers/HomeContainer";
 
-
 class App extends Component {
 
   componentDidMount() {
     const token = localStorage.token;
     if (token) {
-      api.auth.getCurrentUser().then((user) => {
-        this.props.Auth(user);
+      api.auth.getCurrentUser().then((data) => {
+        this.props.Auth(data);
       });
     }
   }
-  //   const onLogout = () => {
-  //     localStorage.removeItem('token')
-  //     props.Auth({})
-  // }
+     onLogout = () => {
+      localStorage.removeItem('token')
+      this.props.Auth({})
+  }
 
   render() {
     return (
       <div className="App">
-        <DropDown />
+         <DropDown logout={this.onLogout} />
         <BrowserRouter>
           <Switch>
             <Route path="/" exact component={HomeContainer} />
             <Route path="/login" exact component={LoginPage} />
             <Route path="/signup" exact component={SignUpPage} />
-            {/* <Route path="/logout" exact component={SignUpPage} /> */}
           </Switch>
         </BrowserRouter>
       </div>
@@ -44,9 +42,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {
-    auth: state.user,
-  };
+  return {}
 };
 
-export default connect(mapStateToProps, { Auth })(App);
+export default connect(mapStateToProps, { Auth } )(App);
