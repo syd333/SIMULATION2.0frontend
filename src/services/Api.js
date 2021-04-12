@@ -1,4 +1,4 @@
-const SIMULATION = `http://localhost:3001`;
+const SIMULATION = `http://localhost:3000`;
 
 const token = () => localStorage.getItem("token");
 
@@ -41,10 +41,20 @@ const login = (data) => {
     }).then((res) => res.json());
   };
 
+  // const getAllMisses = () => {
+  //   return fetch(`${SIMULATION}/misses`, { headers: headers() }).then((res) =>
+  //     res.json()
+  
+  //   );
+  // };
+
   export const api = {
     auth: {
       login,
       signup,
       getCurrentUser,
     }
+    // miss: {
+    //   getAllMisses
+    // }
 }

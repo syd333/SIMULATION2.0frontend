@@ -12,11 +12,6 @@ import HomeContainer from "./components/Containers/HomeContainer";
 
 
 class App extends Component {
-  handleLogin = () => (
-    <LoginPage history={this.props.history} onLogin={this.login} />
-  );
-  handleSignUp = () => <SignUpPage onLogin={this.login} />;
-  handleHome = () => <HomeContainer props={this.state} />;
 
   componentDidMount() {
     const token = localStorage.token;
@@ -37,9 +32,10 @@ class App extends Component {
         <DropDown />
         <BrowserRouter>
           <Switch>
-            <Route path="/" exact component={this.handleHome} />
-            <Route path="/login" exact component={this.handleLogin} />
-            <Route path="/signup" exact component={this.handleSignUp} />
+            <Route path="/" exact component={HomeContainer} />
+            <Route path="/login" exact component={LoginPage} />
+            <Route path="/signup" exact component={SignUpPage} />
+            {/* <Route path="/logout" exact component={SignUpPage} /> */}
           </Switch>
         </BrowserRouter>
       </div>

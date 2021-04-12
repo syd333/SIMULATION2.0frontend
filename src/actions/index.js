@@ -7,6 +7,6 @@ export const Auth = user => {
 
 // export const fetchMiss = () => {
 //     return {
-//         type: 'FETCH_MISS'
+//         type: 'GET_ALL_MISSES'
 //     }
 // }

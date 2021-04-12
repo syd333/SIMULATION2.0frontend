@@ -31,19 +31,17 @@ class LoginPage extends Component {
     localStorage.setItem("token", data.jwt);
     const token = localStorage.token;
     if (token && token !== "undefined") {
-      this.props.history.push("/");
     }
-    console.log(this.state);
-    api.auth.login(this.state.fields).then((data) => {
-      this.props.Auth(data);
+    api.auth.login(this.state).then((data) => {
+      this.props.Auth(data)
     });
+    this.props.history.push("/");
   };
 
   render() {
     return (
       <div className="login">
         <div className="container">
-          {/* <h2 className="ui-login-header">login to write a miss</h2> */}
           <Form onSubmit={this.handleSubmit}>
             <Form.Group widths="equal">
               <Form.Input
@@ -63,7 +61,6 @@ class LoginPage extends Component {
               <button href="/" type="submit" className="loginbutton">
                 login
               </button>
-              {/* <button class="ui button">Click Here</button> */}
             </Form.Group>
           </Form>
         </div>

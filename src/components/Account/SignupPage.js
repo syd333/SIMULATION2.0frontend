@@ -13,9 +13,8 @@ class SignUpPage extends Component {
     handleEmail = data => this.setState({email: data})
     handlePassword = data => this.setState({password: data})
 
-    handleSubmit = (e) => {
+    handleSubmit = (e, data) => {
         e.preventDefault()
-   
         const newUser = {
             email: this.state.email,
             password: this.state.password,
@@ -24,10 +23,10 @@ class SignUpPage extends Component {
         api.auth.signup(newUser).then(data => {
             localStorage.setItem('token', data.jwt )
             this.props.Auth(data)
-        //     console.log(data)
         })
+        this.props.history.push('/')
     }
-
+  
 
   render() {
     return (
