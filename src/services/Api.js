@@ -27,6 +27,7 @@ const login = (data) => {
       body: JSON.stringify(data),
     //   user: data
     }).then((res) => res.json());
+  
   };
   
   //ensures user login accross the site

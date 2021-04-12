@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { connect } from 'react-redux';
 import { api } from "../../services/Api";
 import { Auth } from '../../actions/index'
 import { Form, Button } from "semantic-ui-react";
@@ -60,4 +61,8 @@ class LoginPage extends Component {
   }
 }
 
-export default LoginPage;
+const mapStateToProps = state => {
+    console.log(state)
+}
+
+export default connect(mapStateToProps)(LoginPage);
