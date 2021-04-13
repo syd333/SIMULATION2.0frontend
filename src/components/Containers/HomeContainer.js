@@ -1,18 +1,18 @@
 import React, { Component } from "react";
-
 import MissContainer from "./MissContainer";
+//display fixed "logo" 
+// infinite scroll?
+const HomeContainer = () => {
 
-class HomeContainer extends Component {
-  render() {
+
     return (
-      <div>
+      <div className="homecontainer">
         <MissContainer />
         <div className="addmisscontainer">
           <button className="addmiss">+</button>
         </div>
       </div>
     );
-  }
 }
 
 export default HomeContainer;

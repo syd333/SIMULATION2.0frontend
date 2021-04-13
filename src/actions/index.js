@@ -7,7 +7,7 @@ export const Auth = user => {
 
 export const fetchMiss = miss => {
     return {
-        type: 'GET_ALL_MISSES',
+        type: 'FETCH_MISSES',
         payload: miss
     }
 }

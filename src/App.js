@@ -9,6 +9,7 @@ import DropDown from "./components/Account/DropDown";
 import LoginPage from "./components/Account/LoginPage";
 import SignUpPage from "./components/Account/SignupPage";
 import HomeContainer from "./components/Containers/HomeContainer";
+import MissContainer from "./components/Containers/MissContainer";
 
 class App extends Component {
   componentDidMount() {
@@ -22,11 +23,9 @@ class App extends Component {
   }
   onLogout = () => {
     localStorage.removeItem("token");
-    this.props.Auth({ user: {} })
+    this.props.Auth({user:{} })
     this.props.history.push("/login");
-    window.location.reload()
-    // window.history.pushState({}, '', '/');
-    // this.props.Auth({ auth: {user: {} } });
+
   };
 
 
@@ -35,14 +34,15 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <DropDown logout={this.onLogout} />
-        <BrowserRouter>
+        <DropDown onLogout={this.onLogout} />
+ 
           {/* <Switch> */}
             <Route path="/" exact component={HomeContainer} />
             <Route path="/login" exact component={LoginPage} />
             <Route path="/signup" exact component={SignUpPage} />
+            <Route path="/misses" exact component={MissContainer} />
           {/* </Switch> */}
-        </BrowserRouter>
+
       </div>
     );
   }
@@ -52,4 +52,4 @@ const mapStateToProps = (state) => {
   return {};
 };
 
-export default connect(mapStateToProps, { Auth })(App);
+export default connect(mapStateToProps, { Auth })(withRouter(App));

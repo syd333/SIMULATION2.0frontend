@@ -1,7 +1,8 @@
-export default (state = { miss: {} }, action) => {
+export default (state = [], action) => {
     switch(action.type){
         case 'FETCH_MISSES':
-            return {...state, ...action.payload} 
+            console.log(...action.payload)
+            return action.payload
         default:
             return state
 
