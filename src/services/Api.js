@@ -42,20 +42,17 @@ const login = (data) => {
     }).then((res) => res.json());
   };
 
-  // const getAllMisses = () => {
-  //   return fetch(`${SIMULATION}/misses`, { headers: headers() }).then((res) =>
-  //     res.json()
-  
-  //   );
-  // };
+  const getAllMisses = () => {
+    return fetch(`${SIMULATION}/misses`).then(res => res.json())
+  };
 
   export const api = {
     auth: {
       login,
       signup,
       getCurrentUser
+    },
+    miss: {
+      getAllMisses
     }
-    // miss: {
-    //   getAllMisses
-    // }
 }

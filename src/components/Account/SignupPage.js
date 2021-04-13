@@ -19,7 +19,7 @@ class SignUpPage extends Component {
             email: this.state.email,
             password: this.state.password,
         }
-        api.auth.signup(newUser).then(data => {
+        api.auth.signup(newUser).then((data) => {
             localStorage.setItem('token', data.jwt )
             this.props.Auth(data)
         })

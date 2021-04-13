@@ -22,14 +22,16 @@ class App extends Component {
   }
   onLogout = () => {
     localStorage.removeItem("token");
-    this.props.Auth({user: {}})
-    window.history.pushState({}, '', '/');
+    this.props.Auth({ user: {} })
+    this.props.history.push("/login");
     window.location.reload()
+    // window.history.pushState({}, '', '/');
     // this.props.Auth({ auth: {user: {} } });
-    // this.props.history.push("/login");
-    // window.location.reload();
   };
 
+
+
+  
   render() {
     return (
       <div className="App">
@@ -39,7 +41,6 @@ class App extends Component {
             <Route path="/" exact component={HomeContainer} />
             <Route path="/login" exact component={LoginPage} />
             <Route path="/signup" exact component={SignUpPage} />
-            {/* <Route path="logout" component={this.onLogout()} /> */}
           {/* </Switch> */}
         </BrowserRouter>
       </div>

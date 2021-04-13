@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React from "react";
 import { connect } from "react-redux";
 import { Dropdown, Input } from "semantic-ui-react";
 import { BrowserRouter as Router, Link } from "react-router-dom";
@@ -22,7 +22,7 @@ const DropDown = (props) => {
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
-                  <Link to="/logout" className="item">
+                  <Link to="/" className="item" onClick={props.onLogout}>
                     logout
                   </Link>
                 </Dropdown.Item>
@@ -47,16 +47,6 @@ const DropDown = (props) => {
                 <Dropdown.Item>
                   <Link to="/signup" className="item">
                     signup
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link to="/favorites" className="item">
-                    favorites
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link to="/logout" className="item" onClick={props.onLogout}>
-                    logout
                   </Link>
                 </Dropdown.Item>
               </Dropdown.Menu>
