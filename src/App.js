@@ -11,24 +11,25 @@ import SignUpPage from "./components/Account/SignupPage";
 import HomeContainer from "./components/Containers/HomeContainer";
 
 class App extends Component {
-
   componentDidMount() {
     const token = localStorage.token;
     if (token) {
       api.auth.getCurrentUser().then((data) => {
-        this.props.Auth(data);
+        // this.props.Auth(data);
+        console.log(data)
       });
     }
   }
-     onLogout = () => {
-      localStorage.removeItem('token')
-      this.props.Auth({})
-  }
+  onLogout = () => {
+    localStorage.removeItem("token");
+    this.props.Auth({user: {}});
+    this.props.history.push("/login");
+  };
 
   render() {
     return (
       <div className="App">
-         <DropDown logout={this.onLogout} />
+        <DropDown logout={this.onLogout} />
         <BrowserRouter>
           <Switch>
             <Route path="/" exact component={HomeContainer} />
@@ -42,7 +43,7 @@ class App extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return {}
+  return {};
 };
 
-export default connect(mapStateToProps, { Auth } )(App);
+export default connect(mapStateToProps, { Auth })(App);

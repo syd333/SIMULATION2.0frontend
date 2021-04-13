@@ -9,12 +9,39 @@ class DropDown extends Component {
     return (
       <div className="dropdown container">
         {loggedIn ? (
-        <Router>
-            <Dropdown text="account">
+          <Router>
+            <Dropdown text="*">
               <Dropdown.Menu>
                 <Input icon="search" iconPosition="left" className="search" />
                 <Dropdown.Divider />
-                <Dropdown.Header content="search new city..." />
+                <Dropdown.Header content="..." />
+                <Dropdown.Menu scrolling>
+                  <Dropdown.Item>
+                    <Link to="/login" className="item">
+                      login
+                    </Link>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <Link to="/signup" className="item">
+                      signup
+                    </Link>
+                  </Dropdown.Item>
+                  <Dropdown.Item>
+                    <Link to="/favorites" className="item">
+                      favorites
+                    </Link>
+                  </Dropdown.Item>
+                </Dropdown.Menu>
+              </Dropdown.Menu>
+            </Dropdown>
+          </Router>
+        ) : (
+          <Router>
+            <Dropdown text="*">
+              <Dropdown.Menu>
+                <Input icon="search" iconPosition="left" className="search" />
+                <Dropdown.Divider />
+                <Dropdown.Header content="..." />
                 <Dropdown.Menu scrolling>
                   <Dropdown.Item>
                     <Link to="/favorites" className="item">
@@ -29,35 +56,8 @@ class DropDown extends Component {
                 </Dropdown.Menu>
               </Dropdown.Menu>
             </Dropdown>
-          </Router> 
-         ) : ( 
-        <Router>
-          <Dropdown text="account">
-            <Dropdown.Menu>
-              <Input icon="search" iconPosition="left" className="search" />
-              <Dropdown.Divider />
-              <Dropdown.Header content="search new city..." />
-              <Dropdown.Menu scrolling>
-                <Dropdown.Item>
-                  <Link to="/login" className="item">
-                    login
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link to="/signup" className="item">
-                    signup
-                  </Link>
-                </Dropdown.Item>
-                <Dropdown.Item>
-                  <Link to="/favorites" className="item">
-                    favorites
-                  </Link>
-                </Dropdown.Item>
-              </Dropdown.Menu>
-            </Dropdown.Menu>
-          </Dropdown>
-        </Router>
-         )}
+          </Router>
+        )}
       </div>
     );
   }
@@ -67,8 +67,8 @@ const mapStateToProps = (state) => {
   console.log(state);
   return {
     auth: {
-      user: state.user
-    }
+      user: state.user,
+    },
   };
 };
 export default connect(mapStateToProps)(DropDown);

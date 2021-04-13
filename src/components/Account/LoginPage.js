@@ -6,35 +6,20 @@ import { Form, Button } from "semantic-ui-react";
 
 class LoginPage extends Component {
   state = {
-      email: "",
-      password: ""
+    email: "",
+    password: "",
   };
 
-  //   login = (data) => {
-  //     }
 
-  handleEmail = data => this.setState({email: data})
-  handlePassword = data => this.setState({password: data})
+  handleEmail = (data) => this.setState({ email: data });
+  handlePassword = (data) => this.setState({ password: data });
 
-//   handleChange = (e) => {
-//     const newFields = {
-//       ...this.state.fields,
-//       [e.target.value]: e.target.value,
-//     };
-//     this.setState({
-//       fields: newFields,
-//     });
-//   };
-
-  handleSubmit = (e, data) => {
+  handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("token", data.jwt);
-    const token = localStorage.token;
-    if (token && token !== "undefined") {
-    }
-    api.auth.login(this.state).then((data) => {
-      this.props.Auth(data)
-    });
+      api.auth.login(this.state).then((data) => {
+        localStorage.setItem("token", data.jwt);
+        this.props.Auth(data);
+      });
     this.props.history.push("/");
   };
 
@@ -49,14 +34,14 @@ class LoginPage extends Component {
                 id="form-subcomponent-shorthand-input-email"
                 label="email"
                 // value={this.state.fields.email}
-                onChange={e => this.handleEmail(e.target.value)}
+                onChange={(e) => this.handleEmail(e.target.value)}
               />
               <Form.Input
                 fluid
                 id="form-subcomponent-shorthand-input-password"
                 label="password"
                 // value={this.state.fields.password}
-                onChange={e => this.handlePassword(e.target.value)}
+                onChange={(e) => this.handlePassword(e.target.value)}
               />
               <button href="/" type="submit" className="loginbutton">
                 login
