@@ -15,15 +15,19 @@ class App extends Component {
     const token = localStorage.token;
     if (token) {
       api.auth.getCurrentUser().then((data) => {
-        // this.props.Auth(data);
-        console.log(data)
+        this.props.Auth(data);
+        // console.log(data);
       });
     }
   }
   onLogout = () => {
     localStorage.removeItem("token");
-    this.props.Auth({user: {}});
-    this.props.history.push("/login");
+    this.props.Auth({user: {}})
+    window.history.pushState({}, '', '/');
+    window.location.reload()
+    // this.props.Auth({ auth: {user: {} } });
+    // this.props.history.push("/login");
+    // window.location.reload();
   };
 
   render() {
@@ -31,11 +35,12 @@ class App extends Component {
       <div className="App">
         <DropDown logout={this.onLogout} />
         <BrowserRouter>
-          <Switch>
+          {/* <Switch> */}
             <Route path="/" exact component={HomeContainer} />
             <Route path="/login" exact component={LoginPage} />
             <Route path="/signup" exact component={SignUpPage} />
-          </Switch>
+            {/* <Route path="logout" component={this.onLogout()} /> */}
+          {/* </Switch> */}
         </BrowserRouter>
       </div>
     );

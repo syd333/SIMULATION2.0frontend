@@ -24,7 +24,9 @@ const login = (data) => {
     return fetch(`${SIMULATION}/signup`, {
       method: "POST",
       headers: headers(),
-      body: JSON.stringify(data),
+      body: JSON.stringify({
+        user: data
+      }),
     //   user: data
     }).then((res) => res.json());
   };
