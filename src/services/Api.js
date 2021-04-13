@@ -46,6 +46,18 @@ const login = (data) => {
     return fetch(`${SIMULATION}/misses`).then(res => res.json())
   };
 
+  const addMiss = (newMiss) => {
+    return fetch(`${SIMULATION}/misses`, {
+      method: 'POST',
+      headers: {
+        "Content-Type": "application/json",
+        Accept: "application/json"
+      },
+      body: JSON.stringify(newMiss)
+    })
+    .then(res => res.json())
+  }
+
   export const api = {
     auth: {
       login,
@@ -53,6 +65,7 @@ const login = (data) => {
       getCurrentUser
     },
     miss: {
-      getAllMisses
+      getAllMisses,
+      addMiss
     }
 }

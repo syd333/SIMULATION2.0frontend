@@ -52,3 +52,12 @@ body {
 .login {
   padding-top: 40px;
 }
+
+.addmiss {
+  border: none;
+  font-family: ocr-a-std,monospace;
+  background-color: white;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
