@@ -86,3 +86,33 @@ color: black;
   text-align: center;
   padding-top: 100px;
 }
+
+.createmiss {
+  text-align: center;
+  padding-top: 100px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.cmiss{
+  padding-top: 100px;
+  padding-left: 250px;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: flex-start;
+}
+
+.createmissbutton{
+  border: none;
+  font-family: ocr-a-std,monospace;
+  background-color: white;
+  padding-top: 10px;
+  box-shadow: none;
+}
+.createmissbutton:hover{
+  color: black;
+  border: none !important;
+  box-shadow: none;
+}

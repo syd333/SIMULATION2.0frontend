@@ -3,7 +3,7 @@ import { withRouter, BrowserRouter, Route, Switch } from "react-router-dom";
 import { api } from "./services/Api";
 import { connect } from "react-redux";
 import "semantic-ui-css/semantic.min.css";
-import { Auth } from "./actions/index";
+import { Auth, addMiss } from "./actions/index";
 
 import DropDown from "./components/Account/DropDown";
 import LoginPage from "./components/Account/LoginPage";
@@ -28,6 +28,11 @@ class App extends Component {
     this.props.Auth({ user: {} });
   };
 
+  onCreate = () => {
+    console.log('i was clicked')
+    //take me to CreateMiss component
+  }
+
   render() {
     return (
       <div className="App">
@@ -40,7 +45,7 @@ class App extends Component {
           <Route path="/miss" exact component={SingleMissPage} />
           <Route path="/misses/new" exact component={CreateMiss}/>
         </Switch>
-        <CreateMissButton />
+        <CreateMissButton onCreate={this.onCreate}/>
       </div>
     );
   }
@@ -50,4 +55,4 @@ const mapStateToProps = (state) => {
   return {};
 };
 
-export default connect(mapStateToProps, { Auth })(withRouter(App));
+export default connect(mapStateToProps, { Auth, addMiss })(withRouter(App));

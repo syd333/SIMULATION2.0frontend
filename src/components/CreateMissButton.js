@@ -1,9 +1,9 @@
 import React from "react";
 
-const CreateMissButton = () => {
+const CreateMissButton = (props) => {
     return (
   <div className="addmisscontainer">
-    <button className="addmiss">+</button>
+    <button className="addmiss" onClick={props.onCreate}>+</button>
   </div>
     )
 };

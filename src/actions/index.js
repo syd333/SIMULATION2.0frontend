@@ -19,6 +19,9 @@ export const selectedMis = miss => {
     }
 }
 
-export const addMiss = () => {
-    
+export const addMiss = newMiss => {
+    return {
+        type: 'ADD_MISS',
+        payload: newMiss
+    }
 }

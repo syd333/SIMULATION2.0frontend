@@ -5,7 +5,7 @@ export default (state = {misses: [], selectedMis: {}}, action) => {
       case 'SELECTED_MIS':
         return {...state, selectedMis: action.payload};
         case 'ADD_MISS':
-          
+          return {...state, misses: action.payload}
     default:
       return state;
   }
