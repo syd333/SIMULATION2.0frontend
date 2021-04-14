@@ -7,30 +7,32 @@ import MissPages from "../Miss/MissPages";
 
 class MissContainer extends Component {
   componentDidMount() {
-    api.miss.getAllMisses().then((miss => 
-      {
-        this.props.fetchMiss(miss) 
-        console.log(miss)
-      })
-      
-    );
+    api.miss.getAllMisses().then((miss) => {
+      this.props.fetchMiss(miss);
+
+    });
   }
 
-
-  // {this.props.hogs.map(hog => <HogTile hog={hog} formatHogName={this.props.formatHogName} handleClick={this.props.handleClick}/>)}
+  /* {this.props.miss.map(mis => <MissPages mis={mis}/>)} */
   render() {
     return (
       <div className="misses">
-        {/* {this.props.miss.title} */}
-        {/* {this.props.miss.map(m => <MissPage m={m}/>)} */}
+        {this.props.miss.map((mis) => {
+          return (
+            <ol>
+              <li> 
+              {mis.title} 
+              </li>
+            </ol>
+          );
+        })}
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  return {miss: state.miss}
+  return { miss: state.miss };
 };
-
 
 export default connect(mapStateToProps, { fetchMiss })(MissContainer);

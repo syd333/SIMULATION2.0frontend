@@ -10,7 +10,7 @@
 //     return (
 //       <div className="misslinks">
 //         <List link>
-//           <List.Item active>{this.props.miss.title}</List.Item>
+//           {/* <List.Item active>{this.props.mis.title}</List.Item> */}
 //           <List.Item as="a">Miss title</List.Item>
 //           <List.Item as="a">Miss title</List.Item>
 //           <List.Item as="a">Miss title</List.Item>
@@ -21,7 +21,8 @@
 // }
 
 // const mapStateToProps = (state) => {
+//     console.log(state)
 //   return {};
 // };
 
-// export default connect(mapStateToProps)(MissPages);
+// export default MissPages;

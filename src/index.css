@@ -27,7 +27,7 @@ body {
 .item {
   color: black;
 }
-
+/* -- these are misses now */
 .misslinks {
   text-align: center;
   padding-top: 400px;
@@ -60,4 +60,10 @@ body {
   position: fixed;
   bottom: 20px;
   right: 20px;
+}
+
+.misses{
+  text-align: left;
+  padding-top: 250px;
+  text-decoration: underline;
 }

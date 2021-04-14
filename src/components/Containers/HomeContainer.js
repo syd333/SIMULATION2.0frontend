@@ -1,10 +1,10 @@
 import React, { Component } from "react";
 import MissContainer from "./MissContainer";
-//display fixed "logo" 
+//display fixed "logo"
 // infinite scroll?
-const HomeContainer = () => {
-
-
+class HomeContainer extends Component {
+  render() {
+      console.log('where is the button')
     return (
       <div className="homecontainer">
         <MissContainer />
@@ -13,6 +13,7 @@ const HomeContainer = () => {
         </div>
       </div>
     );
+  }
 }
 
 export default HomeContainer;
