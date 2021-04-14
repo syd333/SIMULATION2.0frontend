@@ -25,7 +25,7 @@ class App extends Component {
   onLogout = () => {
     localStorage.removeItem("token");
     this.props.Auth({user:{} })
-    this.props.history.push("/login");
+    // this.props.history.push("/login");
 
   };
 
@@ -37,13 +37,13 @@ class App extends Component {
       <div className="App">
         <DropDown onLogout={this.onLogout} />
  
-          {/* <Switch> */}
+          <Switch>
             <Route path="/" exact component={HomeContainer} />
             <Route path="/login" exact component={LoginPage} />
             <Route path="/signup" exact component={SignUpPage} />
             <Route path="/misses" exact component={MissContainer} />
-            <Route path="miss" exact component={SingleMissPage} />
-          {/* </Switch> */}
+            <Route path="/miss" exact component={SingleMissPage} />
+          </Switch>
 
       </div>
     );

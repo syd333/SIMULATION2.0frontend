@@ -3,14 +3,13 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { api } from "../../services/Api";
 import { fetchMiss } from "../../actions/index";
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 import MissPages from "../Miss/MissPages";
 
 class MissContainer extends Component {
   componentDidMount() {
     api.miss.getAllMisses().then((miss) => {
       this.props.fetchMiss(miss);
-
     });
   }
 
@@ -20,11 +19,11 @@ class MissContainer extends Component {
       <div className="misses">
         {this.props.miss.map((mis) => {
           return (
-            <ul className ="misseslist">
-              <li> 
-                <Link to="/miss"className="misseslinks">
-              {mis.title} 
-              </Link>
+            <ul className="misseslist">
+              <li>
+                <Link to="/miss" className="misseslinks">
+                  <div onClick={this.props.handleMiss}> {mis.title} </div>
+                </Link>
               </li>
             </ul>
           );

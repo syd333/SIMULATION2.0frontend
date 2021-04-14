@@ -8,7 +8,7 @@ const DropDown = (props) => {
   return (
     <div className="dropdown container">
       {loggedIn ? (
-        <Router>
+
           <Dropdown text="*">
             <Dropdown.Menu>
               <Input icon="search" iconPosition="left" className="search" />
@@ -21,17 +21,17 @@ const DropDown = (props) => {
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
-                  <Link to="/" className="item">
+                  <Link to="/login" className="item">
                     <div onClick={props.onLogout}>logout</div>
                   </Link>
                 </Dropdown.Item>
               </Dropdown.Menu>
             </Dropdown.Menu>
           </Dropdown>
-        </Router>
+
       ) : (
         <div className="dropdown container">
-          <Router>
+  
             <Dropdown text="*">
               <Dropdown.Menu>
                 <Input icon="search" iconPosition="left" className="search" />
@@ -51,7 +51,6 @@ const DropDown = (props) => {
                 </Dropdown.Menu>
               </Dropdown.Menu>
             </Dropdown>
-          </Router>
         </div>
       )}
     </div>
