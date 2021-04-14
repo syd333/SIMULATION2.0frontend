@@ -10,6 +10,7 @@ import LoginPage from "./components/Account/LoginPage";
 import SignUpPage from "./components/Account/SignupPage";
 import HomeContainer from "./components/Containers/HomeContainer";
 import MissContainer from "./components/Containers/MissContainer";
+import SingleMissPage from './components/Miss/SingleMissPage';
 
 class App extends Component {
   componentDidMount() {
@@ -41,6 +42,7 @@ class App extends Component {
             <Route path="/login" exact component={LoginPage} />
             <Route path="/signup" exact component={SignUpPage} />
             <Route path="/misses" exact component={MissContainer} />
+            <Route path="miss" exact component={SingleMissPage} />
           {/* </Switch> */}
 
       </div>

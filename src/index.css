@@ -27,6 +27,10 @@ body {
 .item {
   color: black;
 }
+.item:hover {
+  color:black;
+}
+
 /* -- these are misses now */
 .misslinks {
   text-align: center;
@@ -66,4 +70,15 @@ body {
   text-align: left;
   padding-top: 250px;
   text-decoration: underline;
+}
+
+.misseslist {
+  list-style-type: none;
+}
+
+.misseslinks {
+  color: black;
+}
+.misseslinks:hover {
+color: black;
 }
