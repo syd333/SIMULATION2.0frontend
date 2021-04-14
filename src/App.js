@@ -10,7 +10,9 @@ import LoginPage from "./components/Account/LoginPage";
 import SignUpPage from "./components/Account/SignupPage";
 import HomeContainer from "./components/Containers/HomeContainer";
 import MissContainer from "./components/Containers/MissContainer";
-import SingleMissPage from './components/Miss/SingleMissPage';
+import SingleMissPage from "./components/Miss/SingleMissPage";
+import CreateMissButton from "./components/CreateMissButton";
+import CreateMiss from './components/Miss/CreateMiss';
 
 class App extends Component {
   componentDidMount() {
@@ -18,33 +20,27 @@ class App extends Component {
     if (token) {
       api.auth.getCurrentUser().then((data) => {
         this.props.Auth(data);
-        // console.log(data);
       });
     }
   }
   onLogout = () => {
     localStorage.removeItem("token");
-    this.props.Auth({user:{} })
-    // this.props.history.push("/login");
-
+    this.props.Auth({ user: {} });
   };
 
-
-
-  
   render() {
     return (
       <div className="App">
         <DropDown onLogout={this.onLogout} />
- 
-          <Switch>
-            <Route path="/" exact component={HomeContainer} />
-            <Route path="/login" exact component={LoginPage} />
-            <Route path="/signup" exact component={SignUpPage} />
-            <Route path="/misses" exact component={MissContainer} />
-            <Route path="/miss" exact component={SingleMissPage} />
-          </Switch>
-
+        <Switch>
+          <Route path="/" exact component={HomeContainer} />
+          <Route path="/login" exact component={LoginPage} />
+          <Route path="/signup" exact component={SignUpPage} />
+          <Route path="/misses" exact component={MissContainer} />
+          <Route path="/miss" exact component={SingleMissPage} />
+          <Route path="/misses/new" exact component={CreateMiss}/>
+        </Switch>
+        <CreateMissButton />
       </div>
     );
   }

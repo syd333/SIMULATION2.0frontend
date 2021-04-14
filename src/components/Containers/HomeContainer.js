@@ -1,16 +1,13 @@
 import React, { Component } from "react";
 import MissContainer from "./MissContainer";
+// import SingleMissPage from "../Miss/SingleMissPage";
 //display fixed "logo"
 // infinite scroll?
 class HomeContainer extends Component {
   render() {
-      console.log('where is the button')
     return (
       <div className="homecontainer">
         <MissContainer />
-        <div className="addmisscontainer">
-          <button className="addmiss">+</button>
-        </div>
       </div>
     );
   }

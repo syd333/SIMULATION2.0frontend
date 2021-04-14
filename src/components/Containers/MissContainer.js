@@ -2,9 +2,10 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { api } from "../../services/Api";
-import { fetchMiss } from "../../actions/index";
+import { fetchMiss, selectedMis } from "../../actions/index";
 import { Link } from "react-router-dom";
 import MissPages from "../Miss/MissPages";
+import SingleMissPage from "../Miss/SingleMissPage";
 
 class MissContainer extends Component {
   componentDidMount() {
@@ -13,16 +14,21 @@ class MissContainer extends Component {
     });
   }
 
-  /* {this.props.miss.map(mis => <MissPages mis={mis}/>)} */
+  handleMiss =  (e, miss) => {
+    this.props.selectedMis(miss)
+  };
+
   render() {
     return (
       <div className="misses">
-        {this.props.miss.map((mis) => {
+        {this.props.misses.map((miss) => {
           return (
             <ul className="misseslist">
               <li>
                 <Link to="/miss" className="misseslinks">
-                  <div onClick={this.props.handleMiss}> {mis.title} </div>
+                  <div onClick={(e) => this.handleMiss(e, miss)}>
+                    {miss.title}
+                  </div>
                 </Link>
               </li>
             </ul>
@@ -34,7 +40,7 @@ class MissContainer extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { miss: state.miss };
+  return { misses: state.miss.misses };
 };
 
-export default connect(mapStateToProps, { fetchMiss })(MissContainer);
+export default connect(mapStateToProps, { fetchMiss, selectedMis })(MissContainer);

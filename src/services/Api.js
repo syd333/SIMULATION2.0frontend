@@ -47,7 +47,7 @@ const login = (data) => {
   };
 
   const addMiss = (newMiss) => {
-    return fetch(`${SIMULATION}/misses`, {
+    return fetch(`${SIMULATION}/misses/new`, {
       method: 'POST',
       headers: {
         "Content-Type": "application/json",

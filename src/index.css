@@ -82,3 +82,7 @@ body {
 .misseslinks:hover {
 color: black;
 }
+.singlemiss {
+  text-align: center;
+  padding-top: 100px;
+}

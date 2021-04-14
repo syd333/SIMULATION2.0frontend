@@ -11,3 +11,14 @@ export const fetchMiss = miss => {
         payload: miss
     }
 }
+
+export const selectedMis = miss => {
+    return {
+        type: 'SELECTED_MIS',
+        payload: miss
+    }
+}
+
+export const addMiss = () => {
+    
+}
