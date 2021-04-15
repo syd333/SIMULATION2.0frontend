@@ -5,9 +5,14 @@ import { Auth } from '../../actions/index';
 import { Form } from "semantic-ui-react";
 
 class SignUpPage extends Component {
+  componentDidMount() {
+    navigator.geolocation.getCurrentPosition((position) =>  this.setState({lat: position.coords.latitude, long: position.coords.longitude}))
+  }
     state = {
         email: '',
-        password: ''
+        password: '',
+        lat: '',
+        long: ''
     }
 
     handleEmail = data => this.setState({email: data})
@@ -18,8 +23,10 @@ class SignUpPage extends Component {
         const newUser = {
             email: this.state.email,
             password: this.state.password,
-            //create lat + long
+            lat: this.state.lat,
+            long: this.state.long
         }
+        console.log(newUser)
         api.auth.signup(newUser).then((data) => {
             localStorage.setItem('token', data.jwt )
             this.props.Auth(data)
@@ -29,6 +36,7 @@ class SignUpPage extends Component {
   
 
   render() {
+    
     return (
       <div className="signup">
         <Form onSubmit={e => this.handleSubmit(e)}>
