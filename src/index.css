@@ -34,8 +34,9 @@ body {
 /* -- these are misses now */
 .misslinks {
   text-align: center;
-  padding-top: 400px;
+  padding-top: 300px;
   text-decoration: underline;
+
 }
 
 .signupbutton {
@@ -68,8 +69,9 @@ body {
 
 .misses{
   text-align: left;
-  padding-top: 250px;
+  padding-top: 150px;
   text-decoration: underline;
+  margin-bottom: 100px;
 }
 
 .misseslist {

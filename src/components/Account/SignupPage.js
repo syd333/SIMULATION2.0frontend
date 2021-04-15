@@ -18,6 +18,7 @@ class SignUpPage extends Component {
         const newUser = {
             email: this.state.email,
             password: this.state.password,
+            //create lat + long
         }
         api.auth.signup(newUser).then((data) => {
             localStorage.setItem('token', data.jwt )

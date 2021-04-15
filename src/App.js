@@ -16,6 +16,7 @@ import CreateMiss from './components/Miss/CreateMiss';
 
 class App extends Component {
   componentDidMount() {
+   navigator.geolocation.getCurrentPosition((position) => console.log(position.coords))
     const token = localStorage.token;
     if (token) {
       api.auth.getCurrentUser().then((data) => {
@@ -31,6 +32,7 @@ class App extends Component {
   onCreate = () => {
     console.log('i was clicked')
     //take me to CreateMiss component
+    //  <CreateMiss />
   }
 
   render() {
