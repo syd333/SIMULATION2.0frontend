@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { withRouter, BrowserRouter, Route, Switch } from "react-router-dom";
+import { withRouter, Route, Switch } from "react-router-dom";
 import { api } from "./services/Api";
 import { connect } from "react-redux";
 import "semantic-ui-css/semantic.min.css";

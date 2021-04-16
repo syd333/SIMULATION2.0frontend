@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { connect } from "react-redux";
 import { api } from "../../services/Api";
 import { Auth } from "../../actions/index";
-import { Form, Button } from "semantic-ui-react";
+import { Form } from "semantic-ui-react";
 
 class LoginPage extends Component {
   state = {

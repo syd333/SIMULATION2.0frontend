@@ -1,7 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import { Dropdown, Input } from "semantic-ui-react";
-import { BrowserRouter as Router, Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const DropDown = (props) => {
   const loggedIn = !!props.user.id;

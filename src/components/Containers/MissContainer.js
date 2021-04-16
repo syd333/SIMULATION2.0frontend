@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { api } from "../../services/Api";
 import { fetchMiss, selectedMis } from "../../actions/index"; 
 import { Link } from "react-router-dom";
-import SingleMissPage from "../Miss/SingleMissPage";
 
 class MissContainer extends Component {
   componentDidMount() {
