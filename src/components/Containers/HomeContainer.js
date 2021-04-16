@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import { Link } from "react-router-dom";
 import MissContainer from "./MissContainer";
 // import SingleMissPage from "../Miss/SingleMissPage";
 //display fixed "logo"

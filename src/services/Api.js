@@ -1,4 +1,5 @@
 import Geocode from "react-geocode";
+import axios from "axios";
 const SIMULATION = `http://localhost:3000`;
 
 
@@ -48,7 +49,9 @@ const getAllMisses = () => {
   return fetch(`${SIMULATION}/misses`).then((res) => res.json());
 };
 
-//.catch and throw error 
+//put error into params
+//dispatch an action + reducer for error
+// then can pass through to component to display
 const addMiss = (newMiss) => {
   return fetch(`${SIMULATION}/misses/new`, {
     method: "POST",
@@ -57,11 +60,20 @@ const addMiss = (newMiss) => {
       Accept: "application/json",
     },
     body: JSON.stringify({miss: newMiss}),
-  }).then((res) => res.json());
+  })
+  .then((res) => {
+  if (res.ok) {
+return  res.json();
+  } else {
+    throw new Error('miss not created');
+  }
+  })
+  .catch((error) => {
+    console.log(error)
+  })
 };
 
 const deleteMiss = selectedMis => {
-  console.log(selectedMis)
   return fetch(`${SIMULATION}/misses/${selectedMis.id}`, {
     method: 'DELETE',  
   }).then((res) => res.json())

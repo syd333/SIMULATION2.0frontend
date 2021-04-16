@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 
 //have user information 
+// set 
 //have space to change location?
 class Profile extends Component {
     render () {

@@ -8,8 +8,8 @@ import { deleteMiss } from "../../actions/index";
 class SingleMissPage extends Component {
   handleDeleteMiss = (e, selectedMis) => {
     console.log(selectedMis);
-    api.miss.deleteMiss(selectedMis).then((selectedMis) => {
-      this.props.deleteMiss({selectedMis});
+    api.miss.deleteMiss(selectedMis).then((res) => {
+      this.props.deleteMiss(selectedMis);
     });
     this.props.history.push("/");
   };

@@ -25,7 +25,7 @@ class MissContainer extends Component {
             <ul className="misseslist">
               <li>
                 <Link to="/miss" className="misseslinks">
-                  <div onClick={(e) => this.handleMiss(e, miss)}>
+                  <div className="container" onClick={(e) => this.handleMiss(e, miss)}>
                     {miss.title}
                   </div>
                 </Link>

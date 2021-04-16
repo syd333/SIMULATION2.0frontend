@@ -6,7 +6,8 @@ import { BrowserRouter as Router, Link } from "react-router-dom";
 const DropDown = (props) => {
   const loggedIn = !!props.user.id;
   return (
-    <div className="dropdown container">
+    <div className="dropdowncontainer">
+        <Link to="/" className="pointhome">2.0</Link>
       {loggedIn ? (
 
           <Dropdown text="*">

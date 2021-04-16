@@ -5,11 +5,11 @@ export default (state = { misses: [], selectedMis: {} }, action) => {
     case "SELECTED_MIS":
       return { ...state, selectedMis: action.payload };
     case "ADD_MISS":
-      return { ...state, misses: [...state.misses, action.payload] };
+      return { ...state, misses: [action.payload, ...state.misses] };
     case 'DELETE_MISS':
       console.log(state.misses)
       console.log(action.payload)
-      return {...state, misses: state.misses.filter((miss => miss.id !== action.payload.id))}
+      return {...state, misses: state.misses.filter(miss => miss.id !== action.payload.id)}
     default:
       return state;
   }
