@@ -25,3 +25,10 @@ export const addMiss = newMiss => {
         payload: newMiss
     }
 }
+
+export const deleteMiss = miss => {
+    return {
+        type: 'DELETE_MISS',
+        payload: miss
+    }
+}

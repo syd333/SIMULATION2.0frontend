@@ -48,6 +48,7 @@ const getAllMisses = () => {
   return fetch(`${SIMULATION}/misses`).then((res) => res.json());
 };
 
+//.catch and throw error 
 const addMiss = (newMiss) => {
   return fetch(`${SIMULATION}/misses/new`, {
     method: "POST",
@@ -55,11 +56,18 @@ const addMiss = (newMiss) => {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
-    body: JSON.stringify(newMiss),
+    body: JSON.stringify({miss: newMiss}),
   }).then((res) => res.json());
 };
 
-const getCoords = () => {
+const deleteMiss = selectedMis => {
+  console.log(selectedMis)
+  return fetch(`${SIMULATION}/misses/${selectedMis.id}`, {
+    method: 'DELETE',  
+  }).then((res) => res.json())
+}
+
+// const getCoords = () => {
   // Geocode.setLanguage("en");
   // Geocode.setLocationType("ROOFTOP");
   // Geocode.enableDebug();
@@ -67,7 +75,7 @@ const getCoords = () => {
   //   const address = response.results[0].formatted_address;
   //   console.log(address);
   // });
-};
+// };
 
 export const api = {
   auth: {
@@ -78,8 +86,9 @@ export const api = {
   miss: {
     getAllMisses,
     addMiss,
+    deleteMiss,
   },
-  coords: {
-    getCoords,
-  },
+  // coords: {
+  //   getCoords,
+  // },
 };

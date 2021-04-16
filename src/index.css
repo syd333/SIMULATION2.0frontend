@@ -118,3 +118,9 @@ color: black;
   border: none !important;
   box-shadow: none;
 }
+.deletebutton {
+  color: black;
+}
+.deletebutton:hover{
+color:black;
+}

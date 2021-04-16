@@ -13,6 +13,7 @@ import MissContainer from "./components/Containers/MissContainer";
 import SingleMissPage from "./components/Miss/SingleMissPage";
 import CreateMissButton from "./components/CreateMissButton";
 import CreateMiss from './components/Miss/CreateMiss';
+import Profile from './components/Account/Profile';
 
 class App extends Component {
   componentDidMount() {
@@ -28,11 +29,6 @@ class App extends Component {
     this.props.Auth({ user: {} });
   };
 
-  onCreate = () => {
-    console.log('i was clicked')
-    //take me to CreateMiss component
-    //  <CreateMiss />
-  }
 
   render() {
     return (
@@ -45,6 +41,7 @@ class App extends Component {
           <Route path="/misses" exact component={MissContainer} />
           <Route path="/miss" exact component={SingleMissPage} />
           <Route path="/misses/new" exact component={CreateMiss}/>
+          <Route path="/profile" exact component={Profile} />
         </Switch>
         <CreateMissButton onCreate={this.onCreate}/>
       </div>

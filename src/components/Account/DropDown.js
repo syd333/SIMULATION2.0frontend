@@ -15,6 +15,11 @@ const DropDown = (props) => {
               <Dropdown.Divider />
               <Dropdown.Header content="..." />
               <Dropdown.Menu scrolling>
+              <Dropdown.Item>
+                  <Link to="/profile" className="item">
+                    profile
+                  </Link>
+                </Dropdown.Item>
                 <Dropdown.Item>
                   <Link to="/favorites" className="item">
                     favorites

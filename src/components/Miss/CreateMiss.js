@@ -8,13 +8,6 @@ class CreateMiss extends Component {
   state = {
     title: "",
     message: "",
-    // city: '',
-    // zip: '',
-    // lat: '',
-    // long: '',
-    // state: '',
-    user: '',
-    //only want these two from state? not sure 
   };
 
   handleTitle = (data) => this.setState({ title: data });
@@ -24,12 +17,14 @@ class CreateMiss extends Component {
     e.preventDefault()
     const newMiss = {
         title: this.state.title,
-        message: this.state.message
+        message: this.state.message,
+        user_id: this.props.user.id,
     }
     api.miss.addMiss(newMiss).then((data) => {
+      //how to get user id + miss id into params
         this.props.addMiss(data)
     })
-    // this.props.history.push('/')
+    this.props.history.push('/')
 };
 
   render() {
@@ -58,8 +53,8 @@ class CreateMiss extends Component {
     );
   }
 }
-
+//user: state.auth.user
 const mapStateToProps = state => {
-   return {}
+   return {user: state.auth.user}
 }
 export default connect(mapStateToProps, {addMiss})(CreateMiss);
