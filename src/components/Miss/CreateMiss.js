@@ -13,15 +13,17 @@ class CreateMiss extends Component {
   handleTitle = (data) => this.setState({ title: data });
   handleMessage = (data) => this.setState({ message: data });
 
+// users lat + long from props?
   handleSubmit = (e) => {
     e.preventDefault()
     const newMiss = {
         title: this.state.title,
         message: this.state.message,
         user_id: this.props.user.id,
+        lat: this.props.user.lat,
+        long: this.props.user.long
     }
     api.miss.addMiss(newMiss).then((data) => {
-      //how to get user id + miss id into params
         this.props.addMiss(data)
     })
     this.props.history.push('/')

@@ -1,36 +1,47 @@
 body {
   margin: 0;
-    font-family: ocr-a-std,monospace;
-    font-weight: 400;
-    font-style: normal;
-    padding-right: 60px;
-    padding-left: 50px;
-    margin-left: 50px;
-    margin-right: 60px;
-    background-color: #a1a5bf;
-    font-stretch: expanded;
+  font-family: bebas-neue-pro-semiexpanded, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  /* font-family: ocr-a-std,monospace; */
+  /* font-weight: 400;
+    font-style: bold; */
+  padding-right: 60px;
+  padding-left: 50px;
+  margin-left: 50px;
+  margin-right: 60px;
+  /* background-color: #a1a5bf; */
+  background-color: #bfaba1;
+  font-stretch: expanded;
 }
 
 .App-header {
-    font-family: ocr-a-std,monospace;
-    font-weight: 500;
-    font-style: normal;
-    padding-right: 60px;
-    padding-left: 50px;
-    margin-left: 50px;
-    margin-right: 60px;
+  /* font-family: ocr-a-std, monospace;
+  font-weight: 500;
+  font-style: bold; */
+  font-family: bebas-neue-pro-expanded, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+  padding-right: 60px;
+  padding-left: 50px;
+  margin-left: 50px;
+  margin-right: 60px;
 }
 
 .dropdowncontainer {
-  float:right;
+  float: right;
   padding-right: 80px;
+  font-family: ocr-a-std, monospace;
+  font-size: 20px;
 }
 
 .item {
   color: black;
 }
 .item:hover {
-  color:black;
+  color: black;
 }
 
 /* -- these are misses now */
@@ -38,12 +49,11 @@ body {
   text-align: center;
   padding-top: 100px;
   text-decoration: underline;
-
 }
 
 .signupbutton {
   border: none;
-  font-family: ocr-a-std,monospace;
+  font-family: ocr-a-std, monospace;
   background-color: white;
 }
 
@@ -53,7 +63,7 @@ body {
 
 .loginbutton {
   border: none;
-  font-family: ocr-a-std,monospace;
+  font-family: ocr-a-std, monospace;
   background-color: white;
 }
 .login {
@@ -62,14 +72,14 @@ body {
 
 .addmiss {
   border: none;
-  font-family: ocr-a-std,monospace;
+  font-family: ocr-a-std, monospace;
   position: fixed;
   bottom: 10px;
   right: 10px;
-  background-color: #a1a5bf;
+  background-color: #bfaba1;
 }
 
-.misses{
+.misses {
   text-align: left;
   padding-top: 60px;
   text-decoration: underline;
@@ -84,7 +94,7 @@ body {
   color: black;
 }
 .misseslinks:hover {
-color: black;
+  color: black;
 }
 .singlemiss {
   text-align: center;
@@ -100,7 +110,7 @@ color: black;
   justify-content: flex-start;
 }
 
-.cmiss{
+.cmiss {
   padding-top: 100px;
   padding-left: 250px;
   flex-direction: column;
@@ -108,34 +118,33 @@ color: black;
   justify-content: flex-start;
 }
 
-.createmissbutton{
+.createmissbutton {
   border: none;
-  font-family: ocr-a-std,monospace;
+  /* font-family: ocr-a-std, monospace; */
   padding-top: 10px;
-  background-color: rgb(120, 152, 211);
 }
-.createmissbutton:hover{
+.createmissbutton:hover {
   color: black;
 }
 .deletebutton {
   color: black;
 }
-.deletebutton:hover{
-color:black;
-}
-
-.pointhome {
-color: black;
-position: fixed;
-top: 10px;
-left: 20px;
-}
-
-.pointhome:hover{
+.deletebutton:hover {
   color: black;
 }
 
-.container{
+.pointhome {
+  color: black;
+  position: fixed;
+  top: 10px;
+  left: 20px;
+}
+
+.pointhome:hover {
+  color: black;
+}
+
+.container {
   margin-top: 40px;
   margin-bottom: 40px;
 }
