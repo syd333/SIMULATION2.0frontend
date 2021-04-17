@@ -2,8 +2,9 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { api } from "../../services/Api";
-import { fetchMiss, selectedMis } from "../../actions/index"; 
+import { fetchMiss, selectedMis } from "../../actions/index";
 import { Link } from "react-router-dom";
+import HomeContainer from "./HomeContainer";
 
 class MissContainer extends Component {
   componentDidMount() {
@@ -12,8 +13,8 @@ class MissContainer extends Component {
     });
   }
 
-  handleMiss =  (e, miss) => {
-    this.props.selectedMis(miss)
+  handleMiss = (e, miss) => {
+    this.props.selectedMis(miss);
   };
 
   render() {
@@ -21,15 +22,21 @@ class MissContainer extends Component {
       <div className="misses">
         {this.props.misses.map((miss) => {
           return (
-            <ul className="misseslist">
-              <li>
-                <Link to="/miss" className="misseslinks">
-                  <div className="container" onClick={(e) => this.handleMiss(e, miss)}>
-                    {miss.title}
-                  </div>
-                </Link>
-              </li>
-            </ul>
+            <div className="wrapper">
+              <div className="peak-box"></div>
+              <ul className="misseslist">
+                <li>
+                  <Link to="/miss" className="misseslinks">
+                    <div
+                      className="container"
+                      onClick={(e) => this.handleMiss(e, miss)}
+                    >
+                      {miss.title}
+                    </div>
+                  </Link>
+                </li>
+              </ul>
+            </div>
           );
         })}
       </div>
@@ -41,4 +48,6 @@ const mapStateToProps = (state) => {
   return { misses: state.miss.misses };
 };
 
-export default connect(mapStateToProps, { fetchMiss, selectedMis })(MissContainer);
+export default connect(mapStateToProps, { fetchMiss, selectedMis })(
+  MissContainer
+);

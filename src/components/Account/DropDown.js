@@ -6,15 +6,14 @@ import { Link } from "react-router-dom";
 const DropDown = (props) => {
   const loggedIn = !!props.user.id;
   return (
-    <div className="dropdowncontainer">
+    <div className="pointhomecontainer">
         <Link to="/" className="pointhome">2.0</Link>
       {loggedIn ? (
-
+        <div className="dropdowncontainer"> 
           <Dropdown text="*">
             <Dropdown.Menu>
               <Input icon="search" iconPosition="left" className="search" />
               <Dropdown.Divider />
-              <Dropdown.Header content="..." />
               <Dropdown.Menu scrolling>
               <Dropdown.Item>
                   <Link to="/profile" className="item">
@@ -34,7 +33,7 @@ const DropDown = (props) => {
               </Dropdown.Menu>
             </Dropdown.Menu>
           </Dropdown>
-
+          </div>
       ) : (
         <div className="dropdown container">
   
@@ -42,7 +41,6 @@ const DropDown = (props) => {
               <Dropdown.Menu>
                 <Input icon="search" iconPosition="left" className="search" />
                 <Dropdown.Divider />
-                <Dropdown.Header content="..." />
                 <Dropdown.Menu scrolling>
                   <Dropdown.Item>
                     <Link to="/login" className="item">

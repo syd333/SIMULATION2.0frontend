@@ -4,22 +4,14 @@ body {
   font-weight: 600;
   font-style: normal;
   font-size: 30px;
-  /* font-family: ocr-a-std,monospace; */
-  /* font-weight: 400;
-    font-style: bold; */
   padding-right: 60px;
   padding-left: 50px;
   margin-left: 50px;
   margin-right: 60px;
-  /* background-color: #a1a5bf; */
   background-color: #bfaba1;
-  font-stretch: expanded;
 }
 
 .App-header {
-  /* font-family: ocr-a-std, monospace;
-  font-weight: 500;
-  font-style: bold; */
   font-family: bebas-neue-pro-expanded, sans-serif;
   font-weight: 600;
   font-style: normal;
@@ -31,10 +23,9 @@ body {
 }
 
 .dropdowncontainer {
-  float: right;
-  padding-right: 80px;
+  float: left;
   font-family: ocr-a-std, monospace;
-  font-size: 20px;
+  background-color: #bfaba1;
 }
 
 .item {
@@ -53,8 +44,10 @@ body {
 
 .signupbutton {
   border: none;
-  font-family: ocr-a-std, monospace;
-  background-color: white;
+  background-color: #bfaba1;
+  font-family: bebas-neue-pro-semiexpanded, sans-serif;
+  font-weight: 700;
+  padding-top: 10px;
 }
 
 .signup {
@@ -63,8 +56,10 @@ body {
 
 .loginbutton {
   border: none;
-  font-family: ocr-a-std, monospace;
-  background-color: white;
+  background-color: #bfaba1;
+  font-family: bebas-neue-pro-semiexpanded, sans-serif;
+  font-weight: 700;
+  padding-top: 10px;
 }
 .login {
   padding-top: 40px;
@@ -77,13 +72,14 @@ body {
   bottom: 10px;
   right: 10px;
   background-color: #bfaba1;
+  font-size: 20px ;
 }
 
 .misses {
   text-align: left;
-  padding-top: 60px;
+  padding-top: 40px;
   text-decoration: underline;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
 }
 
 .misseslist {
@@ -120,8 +116,10 @@ body {
 
 .createmissbutton {
   border: none;
-  /* font-family: ocr-a-std, monospace; */
+  font-family: bebas-neue-pro-semiexpanded, sans-serif;
+  font-weight: 700;
   padding-top: 10px;
+  background-color: #bfaba1;
 }
 .createmissbutton:hover {
   color: black;
@@ -137,14 +135,38 @@ body {
   color: black;
   position: fixed;
   top: 10px;
-  left: 20px;
+  right: 20px;
 }
 
 .pointhome:hover {
   color: black;
 }
 
+.pointhomecontainer {
+  font-family: ocr-a-std, monospace;
+  font-size: 20px;
+}
+
 .container {
   margin-top: 40px;
   margin-bottom: 40px;
+}
+
+.wrapper{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.peak-box {
+  width: 100%;
+  margin: 3rem;
+  background-image: url('../src/mockupsim.jpg');
+  background-attachment: fixed;
+}
+/* hover would be animnated/or just diff image */
+.peak-box:before {
+  content: '';
+  display: block;
+  width: 100%;
+  padding-top: 50%;
 }
