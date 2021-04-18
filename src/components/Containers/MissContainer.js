@@ -13,6 +13,10 @@ class MissContainer extends Component {
     });
   }
 
+  renderMore = () => {
+ 
+  }
+
   handleMiss = (e, miss) => {
     this.props.selectedMis(miss);
   };

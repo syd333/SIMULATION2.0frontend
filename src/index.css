@@ -160,8 +160,11 @@ body {
 .peak-box {
   width: 100%;
   margin: 3rem;
-  background-image: url('../src/mockupsim.jpg');
+  background-image: url('../src/simtest.jpg');
   background-attachment: fixed;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 /* hover would be animnated/or just diff image */
 .peak-box:before {
@@ -169,4 +172,7 @@ body {
   display: block;
   width: 100%;
   padding-top: 50%;
+  background-position: center center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
