@@ -3,11 +3,10 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { api } from "../../services/Api";
-import { deleteMiss } from "../../actions/index";
+import { deleteMiss, Auth } from "../../actions/index";
 
 class SingleMissPage extends Component {
   handleDeleteMiss = (e, selectedMis) => {
-    console.log(selectedMis);
     api.miss.deleteMiss(selectedMis).then((res) => {
       this.props.deleteMiss(selectedMis);
     });
@@ -17,9 +16,16 @@ class SingleMissPage extends Component {
   render() {
     return (
       <div className="singlemiss">
-        {this.props.selectedMis.title}
+        <p>MISS</p>
+        <div className="logo"></div>
+         {/* <img src="src/assests/Untitled-2.jpg" alt="slogo"></img> */}
+        <div className="singlemisstitle">{this.props.selectedMis.title}</div>
         <br></br>
-        {this.props.selectedMis.message}
+        <div className="singlemissmsg">{this.props.selectedMis.message} </div>
+        <br></br>
+        <div className="replybutton">
+          <a href={`mailto:${this.props.user.email}`}>reply</a>
+        </div>
         <br></br>
         <Link className="deletebutton" to="/">
           <div
@@ -34,6 +40,7 @@ class SingleMissPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { selectedMis: state.miss.selectedMis };
+  console.log(state);
+  return { selectedMis: state.miss.selectedMis, user: state.auth.user };
 };
-export default connect(mapStateToProps, { deleteMiss })(SingleMissPage);
+export default connect(mapStateToProps, { deleteMiss, Auth })(SingleMissPage);

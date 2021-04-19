@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import {connect} from 'react-redux';
+import {Auth} from '../../actions/index';
 
 //have user information 
 // set 
@@ -7,10 +9,15 @@ class Profile extends Component {
     render () {
         return (
             <div className="profilecontainer">
-
+               
             </div>
         )
     }
 }
 
-export default Profile;
+const mapStateToProps = state => {
+    return {
+        user: state.user
+    }
+}
+export default connect(mapStateToProps, {Auth})(Profile);

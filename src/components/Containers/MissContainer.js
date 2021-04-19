@@ -4,7 +4,6 @@ import { connect } from "react-redux";
 import { api } from "../../services/Api";
 import { fetchMiss, selectedMis } from "../../actions/index";
 import { Link } from "react-router-dom";
-import HomeContainer from "./HomeContainer";
 
 class MissContainer extends Component {
   componentDidMount() {
@@ -14,7 +13,7 @@ class MissContainer extends Component {
   }
 
   renderMore = () => {
- 
+    // this.props.renderMore
   }
 
   handleMiss = (e, miss) => {

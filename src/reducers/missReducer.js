@@ -9,7 +9,7 @@ export default (state = { misses: [], selectedMis: {}, currentIndex: 0}, action)
     case 'DELETE_MISS':
       return {...state, misses: state.misses.filter(miss => miss.id !== action.payload.id)}
       case 'RENDER_MORE':
-      // return {...state, misses: state.misses.slice(state.currentIndex, state.currentIndex + 4)}
+      // return {...state, misses: state.misses.slice(state.currentIndex, state.currentIndex + 20)}
     default:
       return state;
   }

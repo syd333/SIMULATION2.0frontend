@@ -20,6 +20,7 @@ body {
   padding-left: 50px;
   margin-left: 50px;
   margin-right: 60px;
+  background-color: #bfaba1;
 }
 
 .dropdowncontainer {
@@ -60,6 +61,7 @@ body {
   font-family: bebas-neue-pro-semiexpanded, sans-serif;
   font-weight: 700;
   padding-top: 10px;
+  background-color: #bfaba1;
 }
 .login {
   padding-top: 40px;
@@ -72,7 +74,7 @@ body {
   bottom: 10px;
   right: 10px;
   background-color: #bfaba1;
-  font-size: 20px ;
+  font-size: 20px;
 }
 
 .misses {
@@ -92,10 +94,6 @@ body {
 .misseslinks:hover {
   color: black;
 }
-.singlemiss {
-  text-align: center;
-  padding-top: 100px;
-}
 
 .createmiss {
   text-align: center;
@@ -104,6 +102,7 @@ body {
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
+  text-align: center;
 }
 
 .cmiss {
@@ -112,6 +111,7 @@ body {
   flex-direction: column;
   flex-wrap: nowrap;
   justify-content: flex-start;
+  text-align: center;
 }
 
 .createmissbutton {
@@ -126,6 +126,8 @@ body {
 }
 .deletebutton {
   color: black;
+  float: left;
+  font-size: large;
 }
 .deletebutton:hover {
   color: black;
@@ -152,7 +154,7 @@ body {
   margin-bottom: 40px;
 }
 
-.wrapper{
+.wrapper {
   display: flex;
   flex-wrap: wrap;
 }
@@ -160,7 +162,7 @@ body {
 .peak-box {
   width: 100%;
   margin: 3rem;
-  background-image: url('../src/simtest.jpg');
+  background-image: url("../src/simtest.jpg");
   background-attachment: fixed;
   background-position: center center;
   background-size: cover;
@@ -168,11 +170,68 @@ body {
 }
 /* hover would be animnated/or just diff image */
 .peak-box:before {
-  content: '';
+  content: "";
   display: block;
   width: 100%;
   padding-top: 50%;
   background-position: center center;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+a {
+  color: black;
+}
+a:hover {
+  color: black;
+}
+
+.singlemissmsg {
+  font-family: bebas-neue-pro-expanded, sans-serif;
+  font-weight: 400;
+  font-style: italic;
+  word-wrap: break-word;
+  word-break: break-word;
+  /* border-style: solid;
+  border-color: black; */
+}
+.singlemiss {
+  padding-top: 150px;
+}
+
+.singlemiss  p {
+  font-family: bebas-neue-pro, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 12pt;
+}
+.siglemisstitle {
+  display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
+	align-items: stretch;
+	align-content: stretch;
+  word-wrap: break-word;
+  word-break: break-word;
+}
+
+.replybutton {
+  float: left;
+  font-size: large;
+}
+
+.logo {
+  background-image: url('../src/assets/smeasured.jpg');
+  float: right;
+  padding-top: 50px;
+  height: 400px;
+  width: 400px;
+  display: block;
+  background-repeat: no-repeat;
+  /* object-fit: contain; */
+    /* height: auto;
+  max-width: 100%; */
+  /* aspect-ratio: 1370/2056; */
+  /* aspect-ratio: auto 1370 / 2056; */
 }
