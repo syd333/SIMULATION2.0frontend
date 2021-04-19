@@ -31,8 +31,9 @@ class CreateMiss extends Component {
 
   render() {
     return (
-      <div className="createmiss ui grid">
-        <div className="eight wide rows">
+      <div className="createmiss">
+        <div>
+          <p>MISS YOU</p>
           <Form className="cmiss" onSubmit={e => this.handleSubmit(e)}>
             <Form.Group widths="equal">
               <Form.Input

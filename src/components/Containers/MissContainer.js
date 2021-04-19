@@ -12,10 +12,6 @@ class MissContainer extends Component {
     });
   }
 
-  renderMore = () => {
-    // this.props.renderMore
-  }
-
   handleMiss = (e, miss) => {
     this.props.selectedMis(miss);
   };
@@ -25,21 +21,21 @@ class MissContainer extends Component {
       <div className="misses">
         {this.props.misses.map((miss) => {
           return (
-            <div className="wrapper">
-              <div className="peak-box"></div>
-              <ul className="misseslist">
-                <li>
-                  <Link to="/miss" className="misseslinks">
-                    <div
-                      className="container"
-                      onClick={(e) => this.handleMiss(e, miss)}
-                    >
-                      {miss.title}
-                    </div>
-                  </Link>
-                </li>
-              </ul>
-            </div>
+              <div className="wrapper">
+                <div className="peak-box"></div>
+                  <ul className="misseslist">
+                    <li>
+                      <Link to="/miss" className="misseslinks">
+                        <div
+                          className="container"
+                          onClick={(e) => this.handleMiss(e, miss)}
+                        >
+                          {miss.title.toUpperCase()}
+                        </div>
+                      </Link>
+                    </li>
+                  </ul>
+              </div>
           );
         })}
       </div>

@@ -27,6 +27,7 @@ body {
   float: left;
   font-family: ocr-a-std, monospace;
   background-color: #bfaba1;
+  text-align: center;
 }
 
 .item {
@@ -37,18 +38,19 @@ body {
 }
 
 /* -- these are misses now */
-.misslinks {
+/* .misslinks {
   text-align: center;
   padding-top: 100px;
   text-decoration: underline;
-}
+} */
 
 .signupbutton {
   border: none;
   background-color: #bfaba1;
   font-family: bebas-neue-pro-semiexpanded, sans-serif;
   font-weight: 700;
-  padding-top: 10px;
+  outline: none;
+  padding-top: 40px;
 }
 
 .signup {
@@ -60,8 +62,9 @@ body {
   background-color: #bfaba1;
   font-family: bebas-neue-pro-semiexpanded, sans-serif;
   font-weight: 700;
-  padding-top: 10px;
+  padding-top: 40px;
   background-color: #bfaba1;
+  outline: none;
 }
 .login {
   padding-top: 40px;
@@ -100,17 +103,22 @@ body {
   padding-top: 100px;
   display: flex;
   flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
-  text-align: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.createmiss p{
+  font-family: bebas-neue-pro, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 11pt;
 }
 
 .cmiss {
-  padding-top: 100px;
-  padding-left: 250px;
+  padding-top: 30px;
   flex-direction: column;
-  flex-wrap: nowrap;
-  justify-content: flex-start;
+  flex-wrap: wrap;
+  justify-content: center;
   text-align: center;
 }
 
@@ -148,6 +156,15 @@ body {
   font-family: ocr-a-std, monospace;
   font-size: 20px;
 }
+
+/* .misstitlecontainer {
+  display: flex;
+	flex-direction: column;
+	flex-wrap: nowrap;
+	justify-content: center;
+	align-items: stretch;
+	align-content: stretch;
+} */
 
 .container {
   margin-top: 40px;
@@ -187,6 +204,7 @@ a:hover {
 }
 
 .singlemissmsg {
+  padding-top: 50px;
   font-family: bebas-neue-pro-expanded, sans-serif;
   font-weight: 400;
   font-style: italic;
@@ -203,7 +221,7 @@ a:hover {
   font-family: bebas-neue-pro, sans-serif;
   font-weight: 100;
   font-style: normal;
-  font-size: 12pt;
+  font-size: 11pt;
 }
 .siglemisstitle {
   display: flex;
@@ -214,6 +232,7 @@ a:hover {
 	align-content: stretch;
   word-wrap: break-word;
   word-break: break-word;
+  font-size: 400pt;
 }
 
 .replybutton {
@@ -229,6 +248,7 @@ a:hover {
   width: 400px;
   display: block;
   background-repeat: no-repeat;
+  margin-left: 20px;
   /* object-fit: contain; */
     /* height: auto;
   max-width: 100%; */

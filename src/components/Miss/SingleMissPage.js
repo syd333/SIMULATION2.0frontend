@@ -1,4 +1,4 @@
-//RENDER SINGLE (CLICKED) MISS
+
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -20,11 +20,12 @@ class SingleMissPage extends Component {
         <div className="logo"></div>
          {/* <img src="src/assests/Untitled-2.jpg" alt="slogo"></img> */}
         <div className="singlemisstitle">{this.props.selectedMis.title}</div>
-        <br></br>
         <div className="singlemissmsg">{this.props.selectedMis.message} </div>
         <br></br>
+        <div className="createdat">{this.props.selectedMis.created_at}</div>
         <div className="replybutton">
-          <a href={`mailto:${this.props.user.email}`}>reply</a>
+          <a href={`mailto:${this.props.user.email}`}>REPLY</a>
+         
         </div>
         <br></br>
         <Link className="deletebutton" to="/">

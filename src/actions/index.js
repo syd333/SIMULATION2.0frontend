@@ -32,10 +32,3 @@ export const deleteMiss = miss => {
         payload: miss
     }
 }
-
-export const renderMore = data => {
-    return {
-        type: 'RENDER_MORE',
-        payload: data
-    }
-}
