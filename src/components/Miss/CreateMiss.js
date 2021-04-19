@@ -23,6 +23,7 @@ class CreateMiss extends Component {
         lat: this.props.user.lat,
         long: this.props.user.long
     }
+    console.log(newMiss)
     api.miss.addMiss(newMiss).then((data) => {
         this.props.addMiss(data)
     })

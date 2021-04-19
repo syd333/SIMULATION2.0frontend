@@ -83,7 +83,6 @@ body {
 .misses {
   text-align: left;
   padding-top: 40px;
-  text-decoration: underline;
   margin-bottom: 50px;
 }
 
@@ -93,6 +92,7 @@ body {
 
 .misseslinks {
   color: black;
+  text-decoration: underline;
 }
 .misseslinks:hover {
   color: black;
@@ -198,20 +198,20 @@ body {
 
 a {
   color: black;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 a:hover {
   color: black;
 }
 
 .singlemissmsg {
-  padding-top: 50px;
+  padding-top: 25px;
   font-family: bebas-neue-pro-expanded, sans-serif;
   font-weight: 400;
   font-style: italic;
   word-wrap: break-word;
   word-break: break-word;
-  /* border-style: solid;
-  border-color: black; */
 }
 .singlemiss {
   padding-top: 150px;
@@ -238,6 +238,8 @@ a:hover {
 .replybutton {
   float: left;
   font-size: large;
+  padding-top: 0px;
+  padding-bottom: 0px;
 }
 
 .logo {
@@ -254,4 +256,23 @@ a:hover {
   max-width: 100%; */
   /* aspect-ratio: 1370/2056; */
   /* aspect-ratio: auto 1370 / 2056; */
+}
+
+/* .time{
+  font-family: bebas-neue-pro, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 11pt;
+  text-decoration:none;
+  padding-bottom: 20px;
+} */
+.createdat {
+  font-family: bebas-neue-pro, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 11pt;
+  text-decoration:none;
+  padding-bottom: 20px;
+  padding-top: 10px;
+  padding-bottom: 10px;
 }
