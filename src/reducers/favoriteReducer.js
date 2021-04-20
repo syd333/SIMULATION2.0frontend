@@ -5,16 +5,8 @@ export default (state= {favorites: []} , action ) => {
         case "LIKE_MISS":
             return {  ...state, favorites: [...state.favorites, action.payload]};
             case "UNLIKE_MISS":
-            return {
-                ...state,
-                [action.miss.id]: false
-            }
+            return {...state, favorites: state.favorites.filter(favorite => favorite.id !== action.payload.id)}
         default:
             return state;
     }
 }
-
-//favorites : {like: null}??
-// ...state,
-// if (miss.id ! == action.payload.id)
-// return {...state, misses: state.misses.filter(miss => miss.id !== action.payload.id)}
