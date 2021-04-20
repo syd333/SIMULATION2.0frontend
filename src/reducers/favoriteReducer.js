@@ -1,4 +1,4 @@
-export default (state= {favorites: []}, action ) => {
+export default (state= {favorites: [], like: null}, action ) => {
     switch(action.type){
         case "LIKE_MISS":
             // console.log(action.payload)

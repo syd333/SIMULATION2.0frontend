@@ -5,8 +5,8 @@ import { api } from "../../services/Api";
 import {
   deleteMiss,
   Auth,
-  selectedMis,
   likeMiss,
+  unlikeMiss
 } from "../../actions/index";
 
 class SingleMissPage extends Component {
@@ -21,14 +21,18 @@ class SingleMissPage extends Component {
     console.log('i was clicked')
     console.log(e)
     console.log(this.props.user)
-    console.log(favorite)
+    console.log(this.props.favorites)
+    console.log(this.props.like)
+    api.like.updateLike().then((res) => {
+      // this.props.
+    })
   }
 
   render() {
     return (
       <div className="singlemisscontainer">
         <div className="logo">
-          <img src="/testlogo.jpg" alt="faux logo"></img>
+          <img src="/testlogo3.jpg" alt="ogo"></img>
         </div>
         <br></br>
         <div className="singlemisstitle">
@@ -67,6 +71,7 @@ const mapStateToProps = (state) => {
     selectedMis: state.miss.selectedMis,
     user: state.auth.user,
     favorite: state.favorites,
+    like: state.like
   };
 };
-export default connect(mapStateToProps, { deleteMiss, Auth, likeMiss })(SingleMissPage);
+export default connect(mapStateToProps, { deleteMiss, Auth, likeMiss, unlikeMiss })(SingleMissPage);

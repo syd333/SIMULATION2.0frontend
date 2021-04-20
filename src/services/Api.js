@@ -2,7 +2,6 @@ import Geocode from "react-geocode";
 import axios from "axios";
 const SIMULATION = `http://localhost:3000`;
 
-
 const token = () => localStorage.getItem("token");
 
 const headers = () => {
@@ -30,7 +29,6 @@ const signup = (data) => {
     body: JSON.stringify({
       user: data,
     }),
-    //   user: data
   }).then((res) => res.json());
 };
 
@@ -59,35 +57,33 @@ const addMiss = (newMiss) => {
       "Content-Type": "application/json",
       Accept: "application/json",
     },
-    body: JSON.stringify({miss: newMiss}),
+    body: JSON.stringify({ miss: newMiss }),
   })
-  .then((res) => {
-  if (res.ok) {
-return  res.json();
-  } else {
-    throw new Error('miss not created');
-  }
-  })
-  .catch((error) => {
-    console.log(error)
-  })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error("miss not created");
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };
 
-const deleteMiss = selectedMis => {
+const deleteMiss = (selectedMis) => {
   return fetch(`${SIMULATION}/misses/${selectedMis.id}`, {
-    method: 'DELETE',  
-  }).then((res) => res.json())
-}
+    method: "DELETE",
+  }).then((res) => res.json());
+};
 
-// const getCoords = () => {
-  // Geocode.setLanguage("en");
-  // Geocode.setLocationType("ROOFTOP");
-  // Geocode.enableDebug();
-  // Geocode.fromLatLng().then((response) => {
-  //   const address = response.results[0].formatted_address;
-  //   console.log(address);
-  // });
-// };
+const updateLike = (data) => {
+  return fetch(`${SIMULATION}/favorites/:id`, {
+    method: "PATCH",
+    headers: headers(),
+    body: JSON.stringify(data),
+  }).then((res) => res.json());
+};
 
 export const api = {
   auth: {
@@ -100,7 +96,7 @@ export const api = {
     addMiss,
     deleteMiss,
   },
-  // coords: {
-  //   getCoords,
-  // },
+  like: {
+    updateLike,
+  }
 };
