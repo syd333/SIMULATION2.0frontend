@@ -15,17 +15,14 @@ class SingleMissPage extends Component {
   render() {
     return (
       <div className="singlemisscontainer">
-        <div className="container">
-          <div className="singlemiss">MISS</div>
-          <br></br>
-          <br></br>
-        </div>
-        <br></br>
         <div className="logo">
           <img src="/testlogo.jpg" alt="faux logo"></img>
         </div>
         <br></br>
         <div className="singlemisstitle">
+        <div className="singlemiss">
+          MISS
+            </div>
           {this.props.selectedMis.title.toUpperCase()}
           <div className="createdat">
             Posted on: {this.props.selectedMis.user.created_at}

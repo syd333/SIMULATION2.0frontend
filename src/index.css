@@ -198,7 +198,7 @@ a:hover {
 }
 
 .singlemissmsg {
-  padding-top: 500px;
+  padding-top: 300px;
   font-family: bebas-neue-pro-expanded, sans-serif;
   font-weight: 400;
   font-style: italic;
@@ -212,13 +212,14 @@ a:hover {
   padding-top: 100px;
 }
 
+
 .singlemiss {
   font-family: bebas-neue-pro, sans-serif;
   font-weight: 100;
   font-style: normal;
   font-size: 13pt;
+  margin-bottom: 10px;
   float: left;
-  padding-top: 100px;
 }
 
 .singlemisstitle {
@@ -232,6 +233,7 @@ a:hover {
   font-size: 60px;
   /* float: left; */
   line-height: normal;
+  padding-top: 150px;
 }
 
 .replybutton {
@@ -245,21 +247,13 @@ a:hover {
 .logo{
   /* background-image: url('../src/assets/testlogo.jpg'); */
   float: right;
-  height: 400px;
-  width: 400px;
+  height: 350px;
+  width: 350px;
   display: block;
   /* padding-right: 1em; */
   margin-right: 7em;
 }
 
-/* .time{
-  font-family: bebas-neue-pro, sans-serif;
-  font-weight: 100;
-  font-style: normal;
-  font-size: 11pt;
-  text-decoration:none;
-  padding-bottom: 20px;
-} */
 .createdat {
   font-family: bebas-neue-pro, sans-serif;
   font-weight: 100;
@@ -267,8 +261,9 @@ a:hover {
   font-size: 11pt;
   text-decoration:none;
   float: left;
+  padding-top: 30px;
   /* padding-bottom: 20px;
-  padding-top: 10px;
+ 
   padding-bottom: 10px; */
 }
 
