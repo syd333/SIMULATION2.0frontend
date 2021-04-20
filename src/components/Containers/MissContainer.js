@@ -16,9 +16,6 @@ class MissContainer extends Component {
     this.props.selectedMis(miss);
   };
 
-  // handleSlice = (misses) => {
-  // }
-
   handleMoreMisses = (misses) => {
     let newMissArr = [];
     for (let i = 0; i < this.props.misses.length; i += 15) {
