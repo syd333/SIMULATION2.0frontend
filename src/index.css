@@ -132,14 +132,6 @@ body {
 .createmissbutton:hover {
   color: black;
 }
-.deletebutton {
-  color: black;
-  float: left;
-  font-size: large;
-}
-.deletebutton:hover {
-  color: black;
-}
 
 .pointhome {
   color: black;
@@ -206,56 +198,58 @@ a:hover {
 }
 
 .singlemissmsg {
-  padding-top: 25px;
+  padding-top: 500px;
   font-family: bebas-neue-pro-expanded, sans-serif;
   font-weight: 400;
   font-style: italic;
   word-wrap: break-word;
   word-break: break-word;
-}
-.singlemiss {
-  padding-top: 150px;
+  text-align: center;
+  padding-bottom: 20px;
 }
 
-.singlemiss  p {
+.singlemisscontainer{
+  padding-top: 100px;
+}
+
+.singlemiss {
   font-family: bebas-neue-pro, sans-serif;
   font-weight: 100;
   font-style: normal;
-  font-size: 11pt;
+  font-size: 13pt;
+  float: left;
+  padding-top: 100px;
 }
-.siglemisstitle {
+
+.singlemisstitle {
   display: flex;
-	flex-direction: row;
+	flex-direction: column;
 	flex-wrap: wrap;
 	justify-content: flex-start;
-	align-items: stretch;
-	align-content: stretch;
   word-wrap: break-word;
   word-break: break-word;
-  font-size: 400pt;
+  overflow-wrap: break-word;
+  font-size: 60px;
+  /* float: left; */
+  line-height: normal;
 }
 
 .replybutton {
-  float: left;
+  justify-content: center;
+  text-align: center;
   font-size: large;
-  padding-top: 0px;
+  padding-top: 100px;
   padding-bottom: 0px;
 }
 
-.logo {
-  background-image: url('../src/assets/smeasured.jpg');
+.logo{
+  /* background-image: url('../src/assets/testlogo.jpg'); */
   float: right;
-  padding-top: 50px;
   height: 400px;
   width: 400px;
   display: block;
-  background-repeat: no-repeat;
-  margin-left: 20px;
-  /* object-fit: contain; */
-    /* height: auto;
-  max-width: 100%; */
-  /* aspect-ratio: 1370/2056; */
-  /* aspect-ratio: auto 1370 / 2056; */
+  /* padding-right: 1em; */
+  margin-right: 7em;
 }
 
 /* .time{
@@ -272,7 +266,19 @@ a:hover {
   font-style: normal;
   font-size: 11pt;
   text-decoration:none;
-  padding-bottom: 20px;
+  float: left;
+  /* padding-bottom: 20px;
   padding-top: 10px;
+  padding-bottom: 10px; */
+}
+
+.deletebutton {
+  color: black;
+ text-align: center;
+  font-size: large;
+  padding-top: 0px;
   padding-bottom: 10px;
+}
+.deletebutton:hover {
+  color: black;
 }

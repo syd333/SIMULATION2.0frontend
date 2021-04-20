@@ -1,4 +1,3 @@
-
 import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
@@ -15,22 +14,36 @@ class SingleMissPage extends Component {
 
   render() {
     return (
-      <div className="singlemiss">
-        <p>MISS</p>
-        <div className="logo"></div>
-        <div className="singlemisstitle">{this.props.selectedMis.title}</div>
+      <div className="singlemisscontainer">
+        <div className="container">
+          <div className="singlemiss">MISS</div>
+          <br></br>
+          <br></br>
+        </div>
+        <br></br>
+        <div className="logo">
+          <img src="/testlogo.jpg" alt="faux logo"></img>
+        </div>
+        <br></br>
+        <div className="singlemisstitle">
+          {this.props.selectedMis.title.toUpperCase()}
+          <div className="createdat">
+            Posted on: {this.props.selectedMis.user.created_at}
+          </div>
+        </div>
+        <br></br>
         <div className="singlemissmsg">{this.props.selectedMis.message} </div>
         <br></br>
-        <div className="createdat">Posted on:  {this.props.selectedMis.user.created_at}</div>
         <div className="replybutton">
           <a href={`mailto:${this.props.user.email}`}>REPLY</a>
         </div>
-        {/* <Link className="deletebutton" to="/">
+        <Link className="deletebutton" to="/">
           <div
-            onClick={(e) => this.handleDeleteMiss(e, this.props.selectedMis)} >
+            onClick={(e) => this.handleDeleteMiss(e, this.props.selectedMis)}
+          >
             x
           </div>
-        </Link> */}
+        </Link>
       </div>
     );
   }

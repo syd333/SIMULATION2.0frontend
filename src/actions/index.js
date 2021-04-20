@@ -32,3 +32,10 @@ export const deleteMiss = miss => {
         payload: miss
     }
 }
+
+export const slicedMiss = data => {
+    return {
+        type: 'SLICE_MISS',
+        payload: data
+    }
+}
