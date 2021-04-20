@@ -33,13 +33,6 @@ export const deleteMiss = miss => {
     }
 }
 
-export const slicedMiss = data => {
-    return {
-        type: 'SLICE_MISS',
-        payload: data
-    }
-}
-
 export const getFavorites = data => {
     return {
         type: 'GET_FAVORITES',
