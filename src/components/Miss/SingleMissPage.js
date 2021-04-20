@@ -6,7 +6,7 @@ import {
   deleteMiss,
   Auth,
   selectedMis,
-  setFavorite,
+  likeMiss,
 } from "../../actions/index";
 
 class SingleMissPage extends Component {
@@ -17,10 +17,11 @@ class SingleMissPage extends Component {
     this.props.history.push("/");
   };
 
-  handleFavorite = (e, user) => {
+  handleLike = (e, user, favorite) => {
     console.log('i was clicked')
     console.log(e)
     console.log(this.props.user)
+    console.log(favorite)
   }
 
   render() {
@@ -41,7 +42,7 @@ class SingleMissPage extends Component {
         <div className="singlemissmsg">{this.props.selectedMis.message} </div>
         <div className="replybutton">
           <div className="favebutton">
-            <button className="fave" onClick={(e) => this.handleFavorite(e, this.props.user)}>
+            <button className="fave" onClick={(e) => this.handleLike(e, this.props.user, this.props.favorite)}>
               LIKE
             </button>
           </div>
@@ -60,10 +61,12 @@ class SingleMissPage extends Component {
 }
 
 const mapStateToProps = (state) => {
+  console.log(state.favorite)
   return {
+  
     selectedMis: state.miss.selectedMis,
     user: state.auth.user,
     favorite: state.favorites,
   };
 };
-export default connect(mapStateToProps, { deleteMiss, Auth, setFavorite })(SingleMissPage);
+export default connect(mapStateToProps, { deleteMiss, Auth, likeMiss })(SingleMissPage);

@@ -40,9 +40,17 @@ export const slicedMiss = data => {
     }
 }
 
-export const setFavorite = data => {
+export const likeMiss = data => {
+    console.log(data)
     return {
-        type: 'SET_FAVORITES',
+        type: 'LIKE_MISS',
+        payload: data
+    }
+}
+
+export const unlikeMiss = data => {
+    return {
+        type: 'UNLIKE_MISS',
         payload: data
     }
 }

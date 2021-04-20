@@ -299,6 +299,7 @@ a:hover {
   font-family: bebas-neue-pro, sans-serif;
   font-weight: bold;
   background-color: #bfaba1;
+  outline: none;
 }
 
 .favebutton {
