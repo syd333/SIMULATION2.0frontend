@@ -19,10 +19,12 @@ class SingleMissPage extends Component {
 
 
   handleLike = (e, user, miss) => {
-    console.log('i was clicked')
     api.like.createLike({user_id: user.id, miss_id: miss.id, like: true}).then((favorite) => {
       this.props.likeMiss(favorite)
+      const likeBtn = document.querySelector('.fave')
+      likeBtn.innerHTML = 'UNLIKE'
     })
+    // this.props.history.push("/");
   }
 
   render() {

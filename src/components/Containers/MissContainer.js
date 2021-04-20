@@ -2,7 +2,7 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
 import { api } from "../../services/Api";
-import { fetchMiss, selectedMis, slicedMiss } from "../../actions/index";
+import { fetchMiss, selectedMis } from "../../actions/index";
 import { Link } from "react-router-dom";
 
 class MissContainer extends Component {
@@ -57,6 +57,6 @@ const mapStateToProps = (state) => {
   return { misses: state.miss.misses };
 };
 
-export default connect(mapStateToProps, { fetchMiss, selectedMis, slicedMiss })(
+export default connect(mapStateToProps, { fetchMiss, selectedMis })(
   MissContainer
 );

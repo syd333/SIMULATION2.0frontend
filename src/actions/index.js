@@ -41,7 +41,6 @@ export const getFavorites = data => {
 }
 
 export const likeMiss = data => {
-    console.log(data)
     return {
         type: 'LIKE_MISS',
         payload: data
