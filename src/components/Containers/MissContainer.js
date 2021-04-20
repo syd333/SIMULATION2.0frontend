@@ -20,28 +20,31 @@ class MissContainer extends Component {
   // }
 
   handleMoreMisses = (misses) => {
-    for (let i = 0; i < this.props.misses.length; i + 15) {
-      let newMissArr = [];
-      return this.props.misses.map((miss) => {
-        return (
-          <>
-            <div className="peak-box"></div>
-            <ul className="misseslist">
-              <li>
-                <Link to="/miss" className="misseslinks">
-                  <div
-                    className="container"
-                    onClick={(e) => this.handleMiss(e, miss)}>
-                    {miss.title.toUpperCase()}
-                  </div>
-                </Link>
-              </li>
-            </ul>
-          </>
-        )
-      });
+    let newMissArr = [];
+    for (let i = 0; i < this.props.misses.length; i += 15) {
+      newMissArr.push(
+        <>
+          <div className="peak-box"></div>
+          <ul className="misseslist">
+            {this.props.misses.slice(i, i + 14).map((miss) => {
+              return (
+                <li>
+                  <Link to="/miss" className="misseslinks">
+                    <div
+                      className="container"
+                      onClick={(e) => this.handleMiss(e, miss)}
+                    >
+                      {miss.title.toUpperCase()}
+                    </div>
+                  </Link>
+                </li>
+              );
+            })}
+          </ul>
+        </>
+      );
     }
-    // return newMissArr;
+    return newMissArr;
   };
 
   render() {

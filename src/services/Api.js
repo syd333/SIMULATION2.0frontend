@@ -77,11 +77,17 @@ const deleteMiss = (selectedMis) => {
   }).then((res) => res.json());
 };
 
-const updateLike = (data) => {
-  return fetch(`${SIMULATION}/favorites/:id`, {
-    method: "PATCH",
+const getLike = data => {
+  return fetch(`${SIMULATION}/favorites`).then((res) => res.json());
+}
+
+const createLike = (data) => {
+  return fetch(`${SIMULATION}/favorites`, {
+    method: "POST",
     headers: headers(),
-    body: JSON.stringify(data),
+    body: JSON.stringify({
+      favorite: data,
+    }),
   }).then((res) => res.json());
 };
 
@@ -97,6 +103,7 @@ export const api = {
     deleteMiss,
   },
   like: {
-    updateLike,
+    getLike,
+    createLike,
   }
 };

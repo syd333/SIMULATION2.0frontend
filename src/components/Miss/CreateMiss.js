@@ -20,7 +20,7 @@ class CreateMiss extends Component {
         message: this.state.message,
         user_id: this.props.user.id,
         lat: this.props.user.lat,
-        long: this.props.user.long
+        long: this.props.user.long,
     }
     api.miss.addMiss(newMiss).then((data) => {
         this.props.addMiss(data)

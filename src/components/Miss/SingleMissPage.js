@@ -17,14 +17,11 @@ class SingleMissPage extends Component {
     this.props.history.push("/");
   };
 
-  handleLike = (e, user, favorite) => {
+
+  handleLike = (e, user, miss) => {
     console.log('i was clicked')
-    console.log(e)
-    console.log(this.props.user)
-    console.log(this.props.favorites)
-    console.log(this.props.like)
-    api.like.updateLike().then((res) => {
-      // this.props.
+    api.like.createLike({user_id: user.id, miss_id: miss.id, like: true}).then((favorite) => {
+      console.log()
     })
   }
 
@@ -46,7 +43,7 @@ class SingleMissPage extends Component {
         <div className="singlemissmsg">{this.props.selectedMis.message} </div>
         <div className="replybutton">
           <div className="favebutton">
-            <button className="fave" onClick={(e) => this.handleLike(e, this.props.user, this.props.favorite)}>
+            <button className="fave" onClick={(e) => this.handleLike(e, this.props.user, this.props.selectedMis )}>
               LIKE
             </button>
           </div>
@@ -65,13 +62,12 @@ class SingleMissPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.favorite)
+  console.log(state.favorites)
   return {
   
     selectedMis: state.miss.selectedMis,
     user: state.auth.user,
-    favorite: state.favorites,
-    like: state.like
+    favorites: state.favorites
   };
 };
 export default connect(mapStateToProps, { deleteMiss, Auth, likeMiss, unlikeMiss })(SingleMissPage);
