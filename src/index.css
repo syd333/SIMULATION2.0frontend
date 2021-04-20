@@ -100,27 +100,39 @@ body {
 
 .createmiss {
   text-align: center;
-  padding-top: 100px;
+  padding-top: 75px;
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
+  flex-wrap: no-wrap;
   justify-content: center;
+
 }
 
 .createmiss p{
   font-family: bebas-neue-pro, sans-serif;
   font-weight: 100;
   font-style: normal;
-  font-size: 11pt;
+  font-size: 12pt;
 }
 
 .cmiss {
-  padding-top: 30px;
-  flex-direction: column;
-  flex-wrap: wrap;
+  padding-top: 10px;
+  flex-direction: row;
+  flex-wrap: no-wrap;
   justify-content: center;
   text-align: center;
 }
+
+/* .input{
+  border-style: solid;
+  border-color: black;
+
+}
+
+.textarea{
+  border-style: solid;
+  border-color: black;
+} */
 
 .createmissbutton {
   border: none;
@@ -240,7 +252,7 @@ a:hover {
   justify-content: center;
   text-align: center;
   font-size: large;
-  padding-top: 100px;
+  padding-top: 50px;
   padding-bottom: 0px;
 }
 
@@ -276,4 +288,25 @@ a:hover {
 }
 .deletebutton:hover {
   color: black;
+}
+
+.fave {
+  color:black;
+  border-style: none;
+  text-align: center;
+  justify-content: center;
+  font-size: large;
+  font-family: bebas-neue-pro, sans-serif;
+  font-weight: bold;
+  background-color: #bfaba1;
+}
+
+.favebutton {
+  justify-content: center;
+  color:black;
+  border-style: none;
+  text-align: center;
+  justify-content: center;
+  font-size: medium;
+  padding-top: 40px;
 }

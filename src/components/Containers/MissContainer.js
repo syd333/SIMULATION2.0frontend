@@ -17,7 +17,6 @@ class MissContainer extends Component {
   };
 
   // handleSlice = (misses) => {
-
   // }
 
   handleMoreMisses = (misses) => {
@@ -32,8 +31,7 @@ class MissContainer extends Component {
                 <Link to="/miss" className="misseslinks">
                   <div
                     className="container"
-                    onClick={(e) => this.handleMiss(e, miss)}
-                  >
+                    onClick={(e) => this.handleMiss(e, miss)}>
                     {miss.title.toUpperCase()}
                   </div>
                 </Link>

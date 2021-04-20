@@ -2,7 +2,12 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { api } from "../../services/Api";
-import { deleteMiss, Auth, selectedMis } from "../../actions/index";
+import {
+  deleteMiss,
+  Auth,
+  selectedMis,
+  setFavorite,
+} from "../../actions/index";
 
 class SingleMissPage extends Component {
   handleDeleteMiss = (e, selectedMis) => {
@@ -12,6 +17,12 @@ class SingleMissPage extends Component {
     this.props.history.push("/");
   };
 
+  handleFavorite = (e, user) => {
+    console.log('i was clicked')
+    console.log(e)
+    console.log(this.props.user)
+  }
+
   render() {
     return (
       <div className="singlemisscontainer">
@@ -20,9 +31,7 @@ class SingleMissPage extends Component {
         </div>
         <br></br>
         <div className="singlemisstitle">
-        <div className="singlemiss">
-          MISS
-            </div>
+          <div className="singlemiss">MISS</div>
           {this.props.selectedMis.title.toUpperCase()}
           <div className="createdat">
             Posted on: {this.props.selectedMis.user.created_at}
@@ -30,8 +39,12 @@ class SingleMissPage extends Component {
         </div>
         <br></br>
         <div className="singlemissmsg">{this.props.selectedMis.message} </div>
-        <br></br>
         <div className="replybutton">
+          <div className="favebutton">
+            <button className="fave" onClick={(e) => this.handleFavorite(e, this.props.user)}>
+              LIKE
+            </button>
+          </div>
           <a href={`mailto:${this.props.user.email}`}>REPLY</a>
         </div>
         <Link className="deletebutton" to="/">
@@ -47,6 +60,10 @@ class SingleMissPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-  return { selectedMis: state.miss.selectedMis, user: state.auth.user };
+  return {
+    selectedMis: state.miss.selectedMis,
+    user: state.auth.user,
+    favorite: state.favorites,
+  };
 };
-export default connect(mapStateToProps, { deleteMiss, Auth })(SingleMissPage);
+export default connect(mapStateToProps, { deleteMiss, Auth, setFavorite })(SingleMissPage);

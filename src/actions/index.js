@@ -39,3 +39,10 @@ export const slicedMiss = data => {
         payload: data
     }
 }
+
+export const setFavorite = data => {
+    return {
+        type: 'SET_FAVORITES',
+        payload: data
+    }
+}

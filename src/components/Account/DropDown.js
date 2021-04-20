@@ -20,11 +20,11 @@ const DropDown = (props) => {
                     profile
                   </Link>
                 </Dropdown.Item>
-                <Dropdown.Item>
+                {/* <Dropdown.Item>
                   <Link to="/favorites" className="item">
                     favorites
                   </Link>
-                </Dropdown.Item>
+                </Dropdown.Item> */}
                 <Dropdown.Item>
                   <Link to="/login" className="item">
                     <div onClick={props.onLogout}>logout</div>

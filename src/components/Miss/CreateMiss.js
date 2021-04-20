@@ -13,7 +13,6 @@ class CreateMiss extends Component {
   handleTitle = (data) => this.setState({ title: data });
   handleMessage = (data) => this.setState({ message: data });
 
-// users lat + long from props?
   handleSubmit = (e) => {
     e.preventDefault()
     const newMiss = {
@@ -23,7 +22,6 @@ class CreateMiss extends Component {
         lat: this.props.user.lat,
         long: this.props.user.long
     }
-    console.log(newMiss)
     api.miss.addMiss(newMiss).then((data) => {
         this.props.addMiss(data)
     })
@@ -34,22 +32,21 @@ class CreateMiss extends Component {
     return (
       <div className="createmiss">
         <div>
-          <p>MISS YOU</p>
+          <p>MISSED CONNECT</p>
           <Form className="cmiss" onSubmit={e => this.handleSubmit(e)}>
             <Form.Group widths="equal">
               <Form.Input
-                fluid
-                label="title"
+                label="TITLE"
                 onChange={(e) => this.handleTitle(e.target.value)}
               />
                 </Form.Group>
               <Form.TextArea
-                label="subject"
+                label="SUBJECT"
                 onChange={(e) => this.handleMessage(e.target.value)}
               />
               <Form.Checkbox label="I agree to the Terms and Conditions" />
               <button href="/" type="submit" className="createmissbutton">
-                submit
+                SUBMIT
               </button>
           </Form>
         </div>
@@ -57,7 +54,7 @@ class CreateMiss extends Component {
     );
   }
 }
-//user: state.auth.user
+
 const mapStateToProps = state => {
    return {user: state.auth.user}
 }
