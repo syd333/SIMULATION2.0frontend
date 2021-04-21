@@ -2,12 +2,7 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { api } from "../../services/Api";
-import {
-  deleteMiss,
-  Auth,
-  likeMiss,
-  unlikeMiss
-} from "../../actions/index";
+import { deleteMiss, Auth, likeMiss, unlikeMiss } from "../../actions/index";
 
 class SingleMissPage extends Component {
   handleDeleteMiss = (e, selectedMis) => {
@@ -17,17 +12,19 @@ class SingleMissPage extends Component {
     this.props.history.push("/");
   };
 
-
   handleLike = (e, user, miss) => {
-    api.like.createLike({user_id: user.id, miss_id: miss.id, like: true}).then((favorite) => {
-      this.props.likeMiss(favorite)
-      const likeBtn = document.querySelector('.fave')
-      likeBtn.innerHTML = 'UNLIKE'
-    })
-    // this.props.history.push("/");
-  }
+    // { e.target ? (
+    api.like.createLike({ user_id: user.id, miss_id: miss.id, like: true }).then((favorite) => {
+        console.log(favorite)
+        this.props.likeMiss(favorite);
+        console.log(favorite)
+        const likeBtn = document.querySelector(".fave");
+        likeBtn.innerHTML = "UNLIKE";
+      })
+  };
 
   render() {
+    console.log(this.props.favorites)
     return (
       <div className="singlemisscontainer">
         <div className="logo">
@@ -45,7 +42,12 @@ class SingleMissPage extends Component {
         <div className="singlemissmsg">{this.props.selectedMis.message} </div>
         <div className="replybutton">
           <div className="favebutton">
-            <button className="fave" onClick={(e) => this.handleLike(e, this.props.user, this.props.selectedMis )}>
+            <button
+              className="fave"
+              onClick={(e) =>
+                this.handleLike(e, this.props.user, this.props.selectedMis)
+              }
+            >
               LIKE
             </button>
           </div>
@@ -64,12 +66,15 @@ class SingleMissPage extends Component {
 }
 
 const mapStateToProps = (state) => {
-  console.log(state.favorites)
   return {
-  
     selectedMis: state.miss.selectedMis,
     user: state.auth.user,
-    favorites: state.favorites
+    favorites: state.favorite.favorites,
   };
 };
-export default connect(mapStateToProps, { deleteMiss, Auth, likeMiss, unlikeMiss })(SingleMissPage);
+export default connect(mapStateToProps, {
+  deleteMiss,
+  Auth,
+  likeMiss,
+  unlikeMiss,
+})(SingleMissPage);

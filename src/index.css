@@ -222,6 +222,8 @@ a:hover {
 
 .singlemisscontainer{
   padding-top: 100px;
+  margin-left: 20px;
+  margin-right: 40px;
 }
 
 
@@ -309,9 +311,9 @@ a:hover {
   text-align: center;
   justify-content: center;
   font-size: medium;
-  padding-top: 40px;
 }
 
 .favecontainer {
-  padding-top: 100px;
+  padding-top: 150px;
 }
+
