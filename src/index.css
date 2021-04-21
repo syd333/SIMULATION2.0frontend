@@ -105,14 +105,15 @@ body {
   flex-direction: column;
   flex-wrap: no-wrap;
   justify-content: center;
-
+  font-size: large;
+  font-size: 60px;
 }
 
 .createmiss p{
   font-family: bebas-neue-pro, sans-serif;
   font-weight: 100;
   font-style: normal;
-  font-size: 12pt;
+  font-size: 14pt;
 }
 
 .cmiss {
@@ -123,23 +124,34 @@ body {
   text-align: center;
 }
 
-/* .input{
-  border-style: solid;
-  border-color: black;
-
+.titlelabel {
+  font-family: bebas-neue-pro-semiexpanded, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 35px;
+  justify-content: center;
+  text-align: center;
 }
 
-.textarea{
-  border-style: solid;
-  border-color: black;
-} */
-
+.subjectlabel {
+  font-family: bebas-neue-pro-semiexpanded, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 35px;
+}
+.checkbox{
+  font-family: bebas-neue-pro-semiexpanded, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 30px;
+}
 .createmissbutton {
   border: none;
   font-family: bebas-neue-pro-semiexpanded, sans-serif;
   font-weight: 700;
   padding-top: 10px;
   background-color: #bfaba1;
+  font-size: 40px;
 }
 .createmissbutton:hover {
   color: black;
@@ -317,3 +329,36 @@ a:hover {
   padding-top: 150px;
 }
 
+.searchbarinput{
+  padding-top: 150px;
+  border: none;
+  background-color: #bfaba1;
+  justify-content: center;
+  text-align: center;
+}
+
+.searchbar{
+    padding-top: 150px;
+    border: none;
+    background-color: #bfaba1;
+    justify-content: center;
+    text-align: center;
+}
+
+.input{
+  font-family: bebas-neue-pro, sans-serif;
+  font-weight: 100;
+  font-style: italic;
+  font-size: 16pt;
+  outline: none;
+}
+
+.searchbutton {
+  border: none;
+  font-family: bebas-neue-pro-semiexpanded, sans-serif;
+  font-weight: 700;
+  padding-top: 10px;
+  background-color: #bfaba1;
+  font-size: 15px;
+  outline: none;
+}

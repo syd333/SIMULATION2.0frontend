@@ -13,7 +13,7 @@ import MissContainer from "./components/Containers/MissContainer";
 import SingleMissPage from "./components/Miss/SingleMissPage";
 import CreateMissButton from "./components/CreateMissButton";
 import CreateMiss from './components/Miss/CreateMiss';
-import Profile from './components/Account/Profile';
+import Search from './components/Account/Search';
 import Favorites from './components/Account/Favorites';
 
 class App extends Component {
@@ -42,7 +42,7 @@ class App extends Component {
           <Route path="/misses" exact component={MissContainer} />
           <Route path="/miss" exact component={SingleMissPage} />
           <Route path="/misses/new" exact component={CreateMiss}/>
-          <Route path="/profile" exact component={Profile} />
+          <Route path="/search" exact component={Search} />
           <Route path="/favorites" exact component={Favorites}/>
         </Switch>
         <CreateMissButton onCreate={this.onCreate}/>

@@ -3,21 +3,28 @@ import { connect } from "react-redux";
 import { Dropdown, Input } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
+
 const DropDown = (props) => {
   const loggedIn = !!props.user.id;
   return (
     <div className="pointhomecontainer">
-        <Link to="/" className="pointhome">2.0</Link>
+      <Link to="/" className="pointhome">
+        2.0
+      </Link>
       {loggedIn ? (
-        <div className="dropdowncontainer"> 
+        <div className="dropdowncontainer">
           <Dropdown text="*">
             <Dropdown.Menu>
-              <Input icon="search" iconPosition="left" className="search" />
-              <Dropdown.Divider />
+              {/* <Input
+                icon="search"
+                iconPosition="left"
+                className="search"
+              /> */}
+              {/* <Dropdown.Divider /> */}
               <Dropdown.Menu scrolling>
-              <Dropdown.Item>
-                  <Link to="/profile" className="item">
-                    profile
+                <Dropdown.Item>
+                  <Link to="/search" className="item">
+                    search
                   </Link>
                 </Dropdown.Item>
                 <Dropdown.Item>
@@ -33,28 +40,28 @@ const DropDown = (props) => {
               </Dropdown.Menu>
             </Dropdown.Menu>
           </Dropdown>
-          </div>
+        </div>
       ) : (
         <div className="dropdown container">
-  
-            <Dropdown text="*">
-              <Dropdown.Menu>
-                <Input icon="search" iconPosition="left" className="search" />
-                <Dropdown.Divider />
-                <Dropdown.Menu scrolling>
-                  <Dropdown.Item>
-                    <Link to="/login" className="item">
-                      login
-                    </Link>
-                  </Dropdown.Item>
-                  <Dropdown.Item>
-                    <Link to="/signup" className="item">
-                      signup
-                    </Link>
-                  </Dropdown.Item>
-                </Dropdown.Menu>
+          <Dropdown text="*">
+            <Dropdown.Menu>
+              {/* <Input icon="search" iconPosition="left" className="search" 
+               onChange={(e) => this.handleChange(e)}/> */}
+              {/* <Dropdown.Divider /> */}
+              <Dropdown.Menu scrolling>
+                <Dropdown.Item>
+                  <Link to="/login" className="item">
+                    login
+                  </Link>
+                </Dropdown.Item>
+                <Dropdown.Item>
+                  <Link to="/signup" className="item">
+                    signup
+                  </Link>
+                </Dropdown.Item>
               </Dropdown.Menu>
-            </Dropdown>
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
       )}
     </div>

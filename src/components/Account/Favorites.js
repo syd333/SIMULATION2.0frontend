@@ -7,11 +7,11 @@ class Favorites extends Component {
     return (
       <div className="favecontainer">
         YO LIKES: 
-        <div class="ui link list">
-          <div class="active item">{this.props.favorites.favorite}</div>
-          <a class="item">FAVORITE LINK HERE</a>
-          <a class="item">FAVORITE LINK HERE</a>
-          <a class="item">FAVORITE LINK HERE</a>
+        <div className="ui link list">
+          <div className="active item">{this.props.favorites.favorite}</div>
+          <a className="item">FAVORITE LINK HERE</a>
+          <a className="item">FAVORITE LINK HERE</a>
+          <a className="item">FAVORITE LINK HERE</a>
         </div>
       </div>
     );

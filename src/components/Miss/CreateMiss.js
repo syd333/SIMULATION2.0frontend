@@ -34,17 +34,18 @@ class CreateMiss extends Component {
         <div>
           <p>MISSED CONNECT</p>
           <Form className="cmiss" onSubmit={e => this.handleSubmit(e)}>
-            <Form.Group widths="equal">
+            <br></br>
+            <label className="titlelabel"> TITLE</label>
+            <br></br>
               <Form.Input
-                label="TITLE"
                 onChange={(e) => this.handleTitle(e.target.value)}
               />
-                </Form.Group>
+                <label className="subjectlabel"> SUBJECT</label>
               <Form.TextArea
-                label="SUBJECT"
                 onChange={(e) => this.handleMessage(e.target.value)}
               />
-              <Form.Checkbox label="I agree to the Terms and Conditions" />
+              <Form.Checkbox 
+              label ="I agree to the Terms and Conditions" />
               <button href="/" type="submit" className="createmissbutton">
                 SUBMIT
               </button>

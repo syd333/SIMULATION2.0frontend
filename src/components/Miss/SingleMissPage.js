@@ -2,7 +2,8 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { api } from "../../services/Api";
-import { deleteMiss, Auth, likeMiss, unlikeMiss } from "../../actions/index";
+import { deleteMiss, Auth, likeMiss, unlikeMiss, selectedMis } from "../../actions/index";
+
 
 class SingleMissPage extends Component {
   handleDeleteMiss = (e, selectedMis) => {
@@ -13,7 +14,6 @@ class SingleMissPage extends Component {
   };
 
   handleLike = (e, user, miss) => {
-    // { e.target ? (
     api.like.createLike({ user_id: user.id, miss_id: miss.id, like: true }).then((favorite) => {
         console.log(favorite)
         this.props.likeMiss(favorite);
@@ -24,7 +24,7 @@ class SingleMissPage extends Component {
   };
 
   render() {
-    console.log(this.props.favorites)
+    console.log(this.props.selectedMis)
     return (
       <div className="singlemisscontainer">
         <div className="logo">
@@ -45,21 +45,22 @@ class SingleMissPage extends Component {
             <button
               className="fave"
               onClick={(e) =>
-                this.handleLike(e, this.props.user, this.props.selectedMis)
-              }
-            >
+                this.handleLike(e, this.props.user, this.props.selectedMis)}>
               LIKE
             </button>
           </div>
           <a href={`mailto:${this.props.user.email}`}>REPLY</a>
         </div>
+        {/* {this.props.selectedMis.user.id === this.props.user.id ? ( */}
+        {/* // if (user.role === ADMIN || user.auth && selectedMis.user.id === user.id) { */}
         <Link className="deletebutton" to="/">
           <div
-            onClick={(e) => this.handleDeleteMiss(e, this.props.selectedMis)}
-          >
-            x
+            onClick={(e) => this.handleDeleteMiss(e, this.props.selectedMis)}> x
           </div>
         </Link>
+        {/* ) : (  
+          null
+         )} */}
       </div>
     );
   }
