@@ -1,5 +1,6 @@
 import Geocode from "react-geocode";
 import axios from "axios";
+import { unlikeMiss } from "../actions";
 const SIMULATION = `http://localhost:3000`;
 
 const token = () => localStorage.getItem("token");
@@ -91,6 +92,12 @@ const createLike = (data) => {
   }).then((res) => res.json());
 };
 
+const unLikeMiss = data => {
+  return fetch(`${SIMULATION}/favorites/${data.id}`, {
+    method: "DELETE",
+  }).then((res) => res.json());
+}
+
 export const api = {
   auth: {
     login,
@@ -105,5 +112,6 @@ export const api = {
   like: {
     getLike,
     createLike,
+    unLikeMiss,
   }
 };

@@ -2,8 +2,13 @@ import React, { Component } from "react";
 import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { api } from "../../services/Api";
-import { deleteMiss, Auth, likeMiss, unlikeMiss, selectedMis } from "../../actions/index";
-
+import {
+  deleteMiss,
+  Auth,
+  likeMiss,
+  unLikeMiss,
+  selectedMis,
+} from "../../actions/index";
 
 class SingleMissPage extends Component {
   handleDeleteMiss = (e, selectedMis) => {
@@ -15,16 +20,34 @@ class SingleMissPage extends Component {
 
   handleLike = (e, user, miss) => {
     api.like.createLike({ user_id: user.id, miss_id: miss.id, like: true }).then((favorite) => {
-        console.log(favorite)
+      console.log(favorite)
         this.props.likeMiss(favorite);
-        console.log(favorite)
-        const likeBtn = document.querySelector(".fave");
-        likeBtn.innerHTML = "UNLIKE";
-      })
+      });
+      // console.log(this.props.favorites)
+    // let likeBtn = document.querySelector(".fave");
+    // if (this.props.favorites.favorite === true) {
+    //   likeBtn.innerHTML = "UNLIKE";
+    // } else {
+      // api.like.updateLike({ user_id: user.id, miss_id: miss.id, like: false }).then((favorite) => {
+      //     this.props.unLikeMiss(favorite)
+      //   });
+      // this.props.favorites.favorite === false
+    //   likeBtn.innerHTML = "LIKE";
+    // }
   };
 
-  render() {
-    console.log(this.props.selectedMis)
+  handleunLike = (e, miss, user, favorite) => {
+    api.like.unLikeMiss({id: favorite.id, user_id: user.id, miss_id: miss.id, like: false }).then((fave) => {
+      console.log(favorite)
+      this.props.unLikeMiss(favorite);
+    });
+  }
+
+
+   render() {
+    // console.log(this.props.favorites.filter(fave => fave.miss.id == this.props.selectedMis.id))
+    // console.log(this.props.selectedMis)
+   const faveArr = this.props.favorites.filter(fave => fave.miss.id == this.props.selectedMis.id)
     return (
       <div className="singlemisscontainer">
         <div className="logo">
@@ -42,12 +65,17 @@ class SingleMissPage extends Component {
         <div className="singlemissmsg">{this.props.selectedMis.message} </div>
         <div className="replybutton">
           <div className="favebutton">
-            <button
-              className="fave"
-              onClick={(e) =>
+           {faveArr.length ? (
+                 <button className="fave" onClick={(e) =>
+                  this.handleunLike(e, this.props.user, this.props.selectedMis, faveArr[0])}>
+                UNLIKE
+              </button>
+             ) : ( 
+              <button className="fave" onClick={(e) =>
                 this.handleLike(e, this.props.user, this.props.selectedMis)}>
               LIKE
             </button>
+            )}
           </div>
           <a href={`mailto:${this.props.user.email}`}>REPLY</a>
         </div>
@@ -55,7 +83,10 @@ class SingleMissPage extends Component {
         {/* // if (user.role === ADMIN || user.auth && selectedMis.user.id === user.id) { */}
         <Link className="deletebutton" to="/">
           <div
-            onClick={(e) => this.handleDeleteMiss(e, this.props.selectedMis)}> x
+            onClick={(e) => this.handleDeleteMiss(e, this.props.selectedMis)}
+          >
+            {" "}
+            x
           </div>
         </Link>
         {/* ) : (  
@@ -67,6 +98,7 @@ class SingleMissPage extends Component {
 }
 
 const mapStateToProps = (state) => {
+  // console.log(state)
   return {
     selectedMis: state.miss.selectedMis,
     user: state.auth.user,
@@ -77,5 +109,5 @@ export default connect(mapStateToProps, {
   deleteMiss,
   Auth,
   likeMiss,
-  unlikeMiss,
+  unLikeMiss,
 })(SingleMissPage);

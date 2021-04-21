@@ -78,6 +78,7 @@ body {
   right: 10px;
   background-color: #bfaba1;
   font-size: 20px;
+  outline: none;
 }
 
 .misses {
@@ -152,6 +153,7 @@ body {
   padding-top: 10px;
   background-color: #bfaba1;
   font-size: 40px;
+  outline: none;
 }
 .createmissbutton:hover {
   color: black;

@@ -3,7 +3,7 @@ import { withRouter, Route, Switch } from "react-router-dom";
 import { api } from "./services/Api";
 import { connect } from "react-redux";
 import "semantic-ui-css/semantic.min.css";
-import { Auth, addMiss } from "./actions/index";
+import { Auth, addMiss, getFavorites } from "./actions/index";
 
 import DropDown from "./components/Account/DropDown";
 import LoginPage from "./components/Account/LoginPage";
@@ -22,6 +22,7 @@ class App extends Component {
     if (token) {
       api.auth.getCurrentUser().then((data) => {
         this.props.Auth(data);
+        this.props.getFavorites(data.user.favorites)
       });
     }
   }
@@ -55,4 +56,4 @@ const mapStateToProps = (state) => {
   return {};
 };
 
-export default connect(mapStateToProps, { Auth, addMiss })(withRouter(App));
+export default connect(mapStateToProps, { Auth, addMiss, getFavorites })(withRouter(App));

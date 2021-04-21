@@ -3,10 +3,9 @@ export default (state= {favorites: []} , action ) => {
         case "GET_FAVORITES":
         return {...state, favorites: action.payload};
         case "LIKE_MISS":
-            console.log(action.payload)
-            console.log(state)
             return { ...state, favorites: [...state.favorites, action.payload]};
             case "UNLIKE_MISS":
+                console.log(state.favorites)
             return {...state, favorites: state.favorites.filter(favorite => favorite.id !== action.payload.id)}
         default:
             return state;

@@ -33,10 +33,10 @@ export const deleteMiss = miss => {
     }
 }
 
-export const getFavorites = data => {
+export const getFavorites = favorites => {
     return {
         type: 'GET_FAVORITES',
-        payload: data
+        payload: favorites
     }
 }
 
@@ -47,7 +47,7 @@ export const likeMiss = data => {
     }
 }
 
-export const unlikeMiss = data => {
+export const unLikeMiss = data => {
     return {
         type: 'UNLIKE_MISS',
         payload: data

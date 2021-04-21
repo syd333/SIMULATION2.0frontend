@@ -15,12 +15,6 @@ const DropDown = (props) => {
         <div className="dropdowncontainer">
           <Dropdown text="*">
             <Dropdown.Menu>
-              {/* <Input
-                icon="search"
-                iconPosition="left"
-                className="search"
-              /> */}
-              {/* <Dropdown.Divider /> */}
               <Dropdown.Menu scrolling>
                 <Dropdown.Item>
                   <Link to="/search" className="item">
@@ -45,9 +39,6 @@ const DropDown = (props) => {
         <div className="dropdown container">
           <Dropdown text="*">
             <Dropdown.Menu>
-              {/* <Input icon="search" iconPosition="left" className="search" 
-               onChange={(e) => this.handleChange(e)}/> */}
-              {/* <Dropdown.Divider /> */}
               <Dropdown.Menu scrolling>
                 <Dropdown.Item>
                   <Link to="/login" className="item">

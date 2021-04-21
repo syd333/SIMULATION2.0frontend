@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import { connect } from 'react-redux';
 import { api } from "../../services/Api";
-import { Auth } from '../../actions/index';
+import { Auth, getFavorites } from '../../actions/index';
 import { Form } from "semantic-ui-react";
 
 class SignUpPage extends Component {
@@ -26,10 +26,11 @@ class SignUpPage extends Component {
             lat: this.state.lat,
             long: this.state.long
         }
-        console.log(newUser)
         api.auth.signup(newUser).then((data) => {
             localStorage.setItem('token', data.jwt )
             this.props.Auth(data)
+            this.props.getFavorites(data.user.favorites)
+
         })
         this.props.history.push('/')
     }
@@ -67,4 +68,4 @@ const mapStateToProps = state => {
     return {}
 }
 
-export default connect(mapStateToProps, {Auth})(SignUpPage);
+export default connect(mapStateToProps, {Auth, getFavorites})(SignUpPage);
