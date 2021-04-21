@@ -53,3 +53,10 @@ export const unLikeMiss = data => {
         payload: data
     }
 }
+
+export const addReply = newReply => {
+    return {
+        type: "ADD_REPLY",
+        payload: newReply
+    }
+}

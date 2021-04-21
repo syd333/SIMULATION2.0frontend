@@ -15,6 +15,7 @@ import CreateMissButton from "./components/CreateMissButton";
 import CreateMiss from './components/Miss/CreateMiss';
 import Search from './components/Account/Search';
 import Favorites from './components/Account/Favorites';
+import CreateReply from './components/Reply/CreateReply';
 
 class App extends Component {
   componentDidMount() {
@@ -32,6 +33,7 @@ class App extends Component {
   };
 
 
+
   render() {
     return (
       <div className="App">
@@ -45,6 +47,7 @@ class App extends Component {
           <Route path="/misses/new" exact component={CreateMiss}/>
           <Route path="/search" exact component={Search} />
           <Route path="/favorites" exact component={Favorites}/>
+          <Route path="/replyback" exact component={CreateReply} />
         </Switch>
         <CreateMissButton onCreate={this.onCreate}/>
       </div>

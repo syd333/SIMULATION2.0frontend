@@ -32,6 +32,10 @@ class SingleMissPage extends Component {
     });
   }
 
+  // handleRep = () => {
+  //   console.log('mama i made it')
+  // }
+
 
    render() {
     // console.log(this.props.favorites.filter(fave => fave.miss.id == this.props.selectedMis.id))
@@ -74,20 +78,22 @@ class SingleMissPage extends Component {
           <div
             onClick={(e) => this.handleDeleteMiss(e, this.props.selectedMis)}
           >
-            {" "}
             x
           </div>
         </Link>
-        {/* ) : (  
-          null
-         )} */}
+         <Link to={{
+           pathname: "/replyback",
+           state: {selectedMis: this.props.selectedMis}
+          }}> replllyy </Link>
+          {/* <div className="rere" onClick={(e) => this.handleRep(e, this.props.selectedMis, this.props.user)}> 
+           replllyyy
+         </div>  */}
       </div>
     );
   }
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state)
   return {
     selectedMis: state.miss.selectedMis,
     user: state.auth.user,

@@ -98,6 +98,27 @@ const unLikeMiss = data => {
   }).then((res) => res.json());
 }
 
+const addReply = (newReply) => {
+  return fetch(`${SIMULATION}/replies/new`, {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      Accept: "application/json",
+    },
+    body: JSON.stringify({ reply: newReply }),
+  })
+    .then((res) => {
+      if (res.ok) {
+        return res.json();
+      } else {
+        throw new Error("reply not created");
+      }
+    })
+    .catch((error) => {
+      console.log(error);
+    });
+};
+
 export const api = {
   auth: {
     login,
@@ -113,5 +134,8 @@ export const api = {
     getLike,
     createLike,
     unLikeMiss,
+  },
+  reply: {
+    addReply,
   }
 };

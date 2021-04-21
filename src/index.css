@@ -364,3 +364,34 @@ a:hover {
   font-size: 15px;
   outline: none;
 }
+
+.createreply {
+  text-align: center;
+  padding-top: 75px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: no-wrap;
+  justify-content: center;
+  font-size: large;
+  font-size: 60px;
+}
+
+.createreply p{
+  font-family: bebas-neue-pro, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 14pt;
+}
+
+.createreplybutton {
+  border: none;
+  font-family: bebas-neue-pro-semiexpanded, sans-serif;
+  font-weight: 700;
+  padding-top: 10px;
+  background-color: #bfaba1;
+  font-size: 40px;
+  outline: none;
+}
+.createreplybutton:hover {
+  color: black;
+}
