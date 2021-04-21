@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import { addReply} from '../../actions/index';
 import { api } from "../../services/Api";
 import { Form } from "semantic-ui-react";
+import { Redirect } from "react-router";
 
 
 class CreateReply extends Component {
@@ -23,11 +24,10 @@ class CreateReply extends Component {
         user_id: this.props.location.state.selectedMis.user.id,
         miss_id: this.props.location.state.selectedMis.id,
     }
-    console.log(newReply)
     api.reply.addReply(newReply).then((data) => {
         this.props.addReply(data)
     })
-    // this.props.history.push('/')
+    window.history.back()
 };
 
   render() {
@@ -56,7 +56,6 @@ class CreateReply extends Component {
 }
 
 const mapStateToProps = state => {
-    console.log(state)
     return {}
 }
 

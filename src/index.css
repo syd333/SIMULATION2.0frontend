@@ -236,8 +236,8 @@ a:hover {
 
 .singlemisscontainer{
   padding-top: 100px;
-  margin-left: 20px;
-  margin-right: 40px;
+  margin-left: 250px;
+  margin-right: 280px;
 }
 
 
@@ -374,6 +374,7 @@ a:hover {
   justify-content: center;
   font-size: large;
   font-size: 60px;
+  outline: none;
 }
 
 .createreply p{

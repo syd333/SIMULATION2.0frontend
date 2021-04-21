@@ -9,6 +9,7 @@ import {
   unLikeMiss,
   selectedMis,
 } from "../../actions/index";
+import replyReducer from "../../reducers/replyReducer";
 
 class SingleMissPage extends Component {
   handleDeleteMiss = (e, selectedMis) => {
@@ -19,28 +20,35 @@ class SingleMissPage extends Component {
   };
 
   handleLike = (e, user, miss) => {
-    api.like.createLike({ user_id: user.id, miss_id: miss.id, like: true }).then((favorite) => {
-      console.log(favorite)
+    api.like
+      .createLike({ user_id: user.id, miss_id: miss.id, like: true })
+      .then((favorite) => {
+        console.log(favorite);
         this.props.likeMiss(favorite);
       });
   };
 
   handleunLike = (e, miss, user, favorite) => {
-    api.like.unLikeMiss({id: favorite.id, user_id: user.id, miss_id: miss.id, like: false }).then((fave) => {
-      console.log(favorite)
-      this.props.unLikeMiss(favorite);
-    });
-  }
+    api.like
+      .unLikeMiss({
+        id: favorite.id,
+        user_id: user.id,
+        miss_id: miss.id,
+        like: false,
+      })
+      .then((fave) => {
+        console.log(favorite);
+        this.props.unLikeMiss(favorite);
+      });
+  };
 
-  // handleRep = () => {
-  //   console.log('mama i made it')
-  // }
-
-
-   render() {
-    // console.log(this.props.favorites.filter(fave => fave.miss.id == this.props.selectedMis.id))
-    // console.log(this.props.selectedMis)
-   const faveArr = this.props.favorites.filter(fave => fave.miss.id == this.props.selectedMis.id)
+  render() {
+    const replyArr = this.props.replies.filter(
+      (reply) => reply.miss.id === this.props.selectedMis.id
+    );
+    const faveArr = this.props.favorites.filter(
+      (fave) => fave.miss.id == this.props.selectedMis.id
+    );
     return (
       <div className="singlemisscontainer">
         <div className="logo">
@@ -58,22 +66,34 @@ class SingleMissPage extends Component {
         <div className="singlemissmsg">{this.props.selectedMis.message} </div>
         <div className="replybutton">
           <div className="favebutton">
-           {faveArr.length ? (
-                 <button className="fave" onClick={(e) =>
-                  this.handleunLike(e, this.props.user, this.props.selectedMis, faveArr[0])}>
+            {faveArr.length ? (
+              <button
+                className="fave"
+                onClick={(e) =>
+                  this.handleunLike(
+                    e,
+                    this.props.user,
+                    this.props.selectedMis,
+                    faveArr[0]
+                  )
+                }
+              >
                 UNLIKE
               </button>
-             ) : ( 
-              <button className="fave" onClick={(e) =>
-                this.handleLike(e, this.props.user, this.props.selectedMis)}>
-              LIKE
-            </button>
+            ) : (
+              <button
+                className="fave"
+                onClick={(e) =>
+                  this.handleLike(e, this.props.user, this.props.selectedMis)
+                }
+              >
+                LIKE
+              </button>
             )}
           </div>
           <a href={`mailto:${this.props.selectedMis.user.email}`}>REPLY</a>
         </div>
-        {/* {this.props.selectedMis.user.id === this.props.user.id ? ( */}
-        {/* // if (user.role === ADMIN || user.auth && selectedMis.user.id === user.id) { */}
+        {this.props.selectedMis.user.id === this.props.user.id && 
         <Link className="deletebutton" to="/">
           <div
             onClick={(e) => this.handleDeleteMiss(e, this.props.selectedMis)}
@@ -81,13 +101,23 @@ class SingleMissPage extends Component {
             x
           </div>
         </Link>
-         <Link to={{
-           pathname: "/replyback",
-           state: {selectedMis: this.props.selectedMis}
-          }}> replllyy </Link>
-          {/* <div className="rere" onClick={(e) => this.handleRep(e, this.props.selectedMis, this.props.user)}> 
-           replllyyy
-         </div>  */}
+      }
+        <Link
+          to={{
+            pathname: "/replyback",
+            state: { selectedMis: this.props.selectedMis },
+          }}
+        >
+          {" "}
+          replllyy{" "}
+        </Link>
+        <div className="repliescontainer">
+          {replyArr.map((reply) => (
+            <ul>
+              <li>{reply.title}</li>
+            </ul>
+          ))}
+        </div>
       </div>
     );
   }
@@ -98,6 +128,7 @@ const mapStateToProps = (state) => {
     selectedMis: state.miss.selectedMis,
     user: state.auth.user,
     favorites: state.favorite.favorites,
+    replies: state.reply.replies,
   };
 };
 export default connect(mapStateToProps, {
