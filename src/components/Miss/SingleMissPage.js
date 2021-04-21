@@ -23,17 +23,6 @@ class SingleMissPage extends Component {
       console.log(favorite)
         this.props.likeMiss(favorite);
       });
-      // console.log(this.props.favorites)
-    // let likeBtn = document.querySelector(".fave");
-    // if (this.props.favorites.favorite === true) {
-    //   likeBtn.innerHTML = "UNLIKE";
-    // } else {
-      // api.like.updateLike({ user_id: user.id, miss_id: miss.id, like: false }).then((favorite) => {
-      //     this.props.unLikeMiss(favorite)
-      //   });
-      // this.props.favorites.favorite === false
-    //   likeBtn.innerHTML = "LIKE";
-    // }
   };
 
   handleunLike = (e, miss, user, favorite) => {
@@ -77,7 +66,7 @@ class SingleMissPage extends Component {
             </button>
             )}
           </div>
-          <a href={`mailto:${this.props.user.email}`}>REPLY</a>
+          <a href={`mailto:${this.props.selectedMis.user.email}`}>REPLY</a>
         </div>
         {/* {this.props.selectedMis.user.id === this.props.user.id ? ( */}
         {/* // if (user.role === ADMIN || user.auth && selectedMis.user.id === user.id) { */}

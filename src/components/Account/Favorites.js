@@ -3,12 +3,12 @@ import { connect } from "react-redux";
 
 class Favorites extends Component {
   render() {
-    console.log(this.props.favorites.favorite);
+    console.log(this.props.user)
     return (
       <div className="favecontainer">
         YO LIKES: 
         <div className="ui link list">
-          <div className="active item">{this.props.favorites.favorite}</div>
+          <div className="active item"></div>
           <a className="item">FAVORITE LINK HERE</a>
           <a className="item">FAVORITE LINK HERE</a>
           <a className="item">FAVORITE LINK HERE</a>
@@ -20,9 +20,7 @@ class Favorites extends Component {
 
 const mapStateToProps = (state) => {
   console.log(state);
-  return {
-    favorites: state.favorite.favorites
-  };
+  return {};
 };
 
 export default connect(mapStateToProps)(Favorites);
