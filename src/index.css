@@ -223,6 +223,16 @@ a:hover {
   color: black;
 }
 
+.missemaildiv{
+  float: left;
+  padding-left: 300px;
+}
+
+.replybyformbutton {
+  float:right;
+  padding-right: 300px;
+}
+
 .singlemissmsg {
   padding-top: 300px;
   font-family: bebas-neue-pro-expanded, sans-serif;
@@ -238,6 +248,8 @@ a:hover {
   padding-top: 100px;
   margin-left: 250px;
   margin-right: 280px;
+  margin-bottom: 200px;
+  padding-bottom: 80px;
 }
 
 
@@ -290,9 +302,6 @@ a:hover {
   text-decoration:none;
   float: left;
   padding-top: 30px;
-  /* padding-bottom: 20px;
- 
-  padding-bottom: 10px; */
 }
 
 .deletebutton {
@@ -395,4 +404,29 @@ a:hover {
 }
 .createreplybutton:hover {
   color: black;
+}
+
+.repliescontainer{
+  margin-bottom: 20px;
+  font-family: bebas-neue-pro, sans-serif;
+  font-weight: 100;
+  font-style: normal;
+  font-size: 14pt;
+  padding-top: 20px;
+  padding-bottom: 30px;
+
+}
+
+.replytitle{
+  font-family: bebas-neue-pro-semiexpanded, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
+}
+
+.replymsg{
+  font-family: bebas-neue-pro-semiexpanded, sans-serif;
+  font-weight: 600;
+  font-style: normal;
+  font-size: 20px;
 }

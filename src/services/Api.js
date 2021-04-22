@@ -1,6 +1,5 @@
 import Geocode from "react-geocode";
 import axios from "axios";
-import { unlikeMiss } from "../actions";
 const SIMULATION = `http://localhost:3000`;
 
 const token = () => localStorage.getItem("token");

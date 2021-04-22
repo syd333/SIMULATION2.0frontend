@@ -7,9 +7,8 @@ import {
   Auth,
   likeMiss,
   unLikeMiss,
-  selectedMis,
+  addReply
 } from "../../actions/index";
-import replyReducer from "../../reducers/replyReducer";
 
 class SingleMissPage extends Component {
   handleDeleteMiss = (e, selectedMis) => {
@@ -91,7 +90,18 @@ class SingleMissPage extends Component {
               </button>
             )}
           </div>
-          <a href={`mailto:${this.props.selectedMis.user.email}`}>REPLY</a>
+          <div className="missemaildiv">
+          <a href={`mailto:${this.props.selectedMis.user.email}`}>REPLY BY EMAIL</a>
+          </div>
+        || 
+          <Link className="replybyformbutton"
+          to={{
+            pathname: "/replyback",
+            state: { selectedMis: this.props.selectedMis },
+          }}
+        >
+        REPLY BY FORM
+        </Link>
         </div>
         {this.props.selectedMis.user.id === this.props.user.id && 
         <Link className="deletebutton" to="/">
@@ -102,21 +112,21 @@ class SingleMissPage extends Component {
           </div>
         </Link>
       }
-        <Link
-          to={{
-            pathname: "/replyback",
-            state: { selectedMis: this.props.selectedMis },
-          }}
-        >
-          {" "}
-          replllyy{" "}
-        </Link>
         <div className="repliescontainer">
+          {/* {replyArr.length && !!replyArr === true ? ( */}
+            {/* return (  */}
+            REPLIES:
           {replyArr.map((reply) => (
             <ul>
-              <li>{reply.title}</li>
+              <div className="replytitle">{reply.title}</div>
+              <div className="createdat">{reply.created_at}</div>
+              <div className="replymsg">{reply.message}</div>
             </ul>
           ))}
+            {/* )
+          ) : ( 
+            null
+          )} */}
         </div>
       </div>
     );
@@ -136,4 +146,5 @@ export default connect(mapStateToProps, {
   Auth,
   likeMiss,
   unLikeMiss,
+  addReply,
 })(SingleMissPage);

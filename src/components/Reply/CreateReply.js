@@ -3,7 +3,6 @@ import { connect } from "react-redux";
 import { addReply} from '../../actions/index';
 import { api } from "../../services/Api";
 import { Form } from "semantic-ui-react";
-import { Redirect } from "react-router";
 
 
 class CreateReply extends Component {
