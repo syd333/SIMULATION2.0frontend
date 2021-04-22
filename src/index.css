@@ -225,12 +225,12 @@ a:hover {
 
 .missemaildiv{
   float: left;
-  padding-left: 300px;
+  padding-left: 500px;
 }
 
 .replybyformbutton {
   float:right;
-  padding-right: 300px;
+  padding-right: 500px;
 }
 
 .singlemissmsg {
@@ -280,15 +280,15 @@ a:hover {
   justify-content: center;
   text-align: center;
   font-size: large;
-  padding-top: 50px;
+  padding-top: 10px;
   padding-bottom: 0px;
 }
 
 .logo{
   /* background-image: url('../src/assets/testlogo.jpg'); */
   float: right;
-  height: 350px;
-  width: 350px;
+  height: 400px;
+  width: 400px;
   display: block;
   /* padding-right: 1em; */
   margin-right: 7em;
@@ -412,7 +412,7 @@ a:hover {
   font-weight: 100;
   font-style: normal;
   font-size: 14pt;
-  padding-top: 20px;
+  padding-top: 80px;
   padding-bottom: 30px;
 
 }
@@ -426,7 +426,7 @@ a:hover {
 
 .replymsg{
   font-family: bebas-neue-pro-semiexpanded, sans-serif;
-  font-weight: 600;
+  font-weight: 400;
   font-style: normal;
   font-size: 20px;
 }

@@ -48,10 +48,11 @@ class SingleMissPage extends Component {
     const faveArr = this.props.favorites.filter(
       (fave) => fave.miss.id == this.props.selectedMis.id
     );
+    console.log(replyArr)
     return (
       <div className="singlemisscontainer">
         <div className="logo">
-          <img src="/testlogo3.jpg" alt="ogo"></img>
+          <img src="/testlogo3.jpg" alt="logo"></img>
         </div>
         <br></br>
         <div className="singlemisstitle">
@@ -118,9 +119,11 @@ class SingleMissPage extends Component {
             REPLIES:
           {replyArr.map((reply) => (
             <ul>
+              <div className="ui divider"></div>
               <div className="replytitle">{reply.title}</div>
               <div className="createdat">{reply.created_at}</div>
               <div className="replymsg">{reply.message}</div>
+              <div className="replyuser">Posted by: {reply.user.email}</div>
             </ul>
           ))}
             {/* )
