@@ -13,6 +13,7 @@ class Favorites extends Component {
               <Link to='/' >
               <div className="favetitle"> {fave.miss.title} </div>
               <div className="favemsg">{fave.miss.message}</div>
+              {/* <div className="writtenby">Written By: {fave.miss.user.email}</div> */}
               </Link>
             </div>
           );
@@ -23,7 +24,7 @@ class Favorites extends Component {
 }
 
 const mapStateToProps = (state) => {
-  // console.log(state);
+  console.log(state);
   return {
     favorites: state.favorite.favorites,
   };

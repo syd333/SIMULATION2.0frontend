@@ -114,9 +114,9 @@ class SingleMissPage extends Component {
         </Link>
       }
         <div className="repliescontainer">
-          {/* {replyArr.length && !!replyArr === true ? ( */}
-            {/* return (  */}
-            REPLIES:
+           {replyArr.length ? (
+            <p>REPLIES:</p>
+            ) : ( null )}
           {replyArr.map((reply) => (
             <ul>
               <div className="ui divider"></div>
@@ -126,10 +126,6 @@ class SingleMissPage extends Component {
               <div className="replyuser">Posted by: {reply.user.email}</div>
             </ul>
           ))}
-            {/* )
-          ) : ( 
-            null
-          )} */}
         </div>
       </div>
     );
