@@ -118,6 +118,10 @@ const addReply = (newReply) => {
     });
 };
 
+const getReplies = replies => {
+  return fetch(`${SIMULATION}/replies`).then(res => res.json());
+}
+
 export const api = {
   auth: {
     login,
@@ -136,5 +140,6 @@ export const api = {
   },
   reply: {
     addReply,
+    getReplies,
   }
 };

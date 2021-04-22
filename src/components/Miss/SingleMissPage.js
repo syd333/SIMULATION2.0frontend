@@ -94,7 +94,7 @@ class SingleMissPage extends Component {
           <div className="missemaildiv">
           <a href={`mailto:${this.props.selectedMis.user.email}`}>REPLY BY EMAIL</a>
           </div>
-        || 
+                or
           <Link className="replybyformbutton"
           to={{
             pathname: "/replyback",

@@ -60,3 +60,10 @@ export const addReply = newReply => {
         payload: newReply
     }
 }
+
+export const getReplies = replies => {
+    return {
+        type: "GET_REPLIES",
+        payload: replies
+    }
+}
