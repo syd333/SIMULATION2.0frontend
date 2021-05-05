@@ -2,6 +2,9 @@ SIMULATION 2.0 :::
 ----------------------
 What did people do before Instagram and sliding into DM's .... there was missed connections. Simulation 2.0 is an imitation of craigslists' very own missed connections but brought into the modern age!
 
+We are now live [please be kind, we are still a WIP] 
+www.simulation2.com
+
 Development set up :::
 ----------------------
 ```
