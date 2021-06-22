@@ -29,7 +29,17 @@ const signup = (data) => {
     body: JSON.stringify({
       user: data,
     }),
-  }).then((res) => res.json());
+  })
+  .then((res) => {
+    if (res.ok) {
+      return res.json();
+    } else {
+      throw new Error("Fill out all fields so you can find your love!");
+    }
+  })
+  .catch((error) => {
+    alert(error);
+  });
 };
 
 //ensures user login across the site
@@ -63,11 +73,11 @@ const addMiss = (newMiss) => {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error("miss not created");
+        throw new Error("miss can not be created! Missing a text field!");
       }
     })
     .catch((error) => {
-      console.log(error);
+      alert(error);
     });
 };
 
@@ -110,11 +120,11 @@ const addReply = (newReply) => {
       if (res.ok) {
         return res.json();
       } else {
-        throw new Error("reply not created");
+        throw new Error("Reply can not be created! Missing a text field!");
       }
     })
     .catch((error) => {
-      console.log(error);
+      alert(error);
     });
 };
 
