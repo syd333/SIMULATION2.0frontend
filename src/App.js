@@ -19,20 +19,14 @@ import CreateReply from "./components/Reply/CreateReply";
 
 // const App = () => {
 //   const [auth, setAuth] = useState({ user: {} });
+// const [favorites, setFavorites] = useState()
 // useEffect(() => {
  // const token = localStorage.token;
-  // if (token && token != "undefined") {
+  // if (token) {
     // api.auth.getCurrentUser().then((data) => {
       //setAuth({
         //user: {
           //id: data.user.id,
-          //name: data.user.name,
-//         },
-//       });
-//       setLocationTesting({
-//         location: {
-//           latitude: data.user.location.latitude,
-//           longitude: data.user.location.longitude,
 //         },
 //       });
 //     });
@@ -52,10 +46,12 @@ class App extends Component {
   }
   onLogout = () => {
     localStorage.removeItem("token");
+    //setAuth({user: {}})
     this.props.Auth({ user: {} });
   };
 
   render() {
+    //take out render + return
     return (
       <div className="App">
         <DropDown onLogout={this.onLogout} />
@@ -79,6 +75,9 @@ class App extends Component {
 const mapStateToProps = (state) => {
   return {};
 };
+
+//const { setAuth } = action.auth
+//export default connect(mapStateToProps, { setAuth })(App);
 
 export default connect(mapStateToProps, { Auth, addMiss, getFavorites })(
   withRouter(App)
